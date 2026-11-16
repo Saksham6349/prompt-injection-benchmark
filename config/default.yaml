@@ -1,0 +1,100 @@
+# ── Project Configuration ─────────────────────────────────────────────
+project:
+  name: "prompt-injection-benchmark"
+  version: "0.1.0"
+  seed: 42
+
+# ── Sandbox ───────────────────────────────────────────────────────────
+sandbox:
+  host: "127.0.0.1"
+  port: 8900
+  db_path: "data/sandbox.db"
+  reset_between_runs: true
+
+# ── Agent Harness ─────────────────────────────────────────────────────
+agent:
+  max_turns: 10
+  temperature: 0.0
+  providers:
+    openai:
+      model: "gpt-4o"
+      api_key_env: "OPENAI_API_KEY"
+    anthropic:
+      model: "claude-sonnet-4-20250514"
+      api_key_env: "ANTHROPIC_API_KEY"
+    google:
+      model: "gemini-2.5-flash"
+      api_key_env: "GOOGLE_API_KEY"
+    ollama:
+      model: "llama3.1:8b"
+      base_url: "http://localhost:11434"
+
+  cache:
+    enabled: true
+    path: "data/response_cache.db"
+
+# ── Benchmark ─────────────────────────────────────────────────────────
+benchmark:
+  total_cases: 500
+  benign_tasks: 25
+  public_split_ratio: 0.8
+  output_path: "data/benchmark_cases.jsonl"
+  languages:
+    - "en"
+    - "hi"
+    - "hi-en"
+
+# ── Defense ───────────────────────────────────────────────────────────
+defense:
+  provenance:
+    enabled: true
+    tag_format: "structured"          # "structured" or "xml"
+
+  classifier:
+    enabled: true
+    model_name: "microsoft/deberta-v3-small"
+    model_path: "models/injection_classifier"
+    threshold: 0.5
+    max_length: 512
+    batch_size: 16
+
+  policy:
+    enabled: true
+    sensitive_tools:
+      - "send_email"
+      - "bank_transfer"
+      - "delete_file"
+      - "update_calendar"
+    require_user_intent_match: true
+
+# ── Evaluation ────────────────────────────────────────────────────────
+evaluation:
+  results_dir: "results"
+  baselines:
+    - "none"
+    - "spotlighting"
+    - "sandwich"
+    - "perplexity_filter"
+    - "promptguard"
+    - "llm_judge"
+    - "our_defense"
+  metrics:
+    - "attack_success_rate"
+    - "utility_score"
+    - "latency_ms"
+    - "classifier_auroc"
+    - "classifier_fpr"
+  confidence_level: 0.95
+  num_repeats: 3
+
+# ── Training ──────────────────────────────────────────────────────────
+training:
+  classifier:
+    epochs: 10
+    learning_rate: 2.0e-5
+    weight_decay: 0.01
+    warmup_ratio: 0.1
+    eval_steps: 50
+    save_steps: 100
+    output_dir: "models/injection_classifier"
+    train_split: "public"

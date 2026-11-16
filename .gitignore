@@ -1,0 +1,13 @@
+.env
+*.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+results/*.jsonl
+data/*.db
+data/sandbox.db
+models/
+.vscode/
+.idea/
