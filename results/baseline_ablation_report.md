@@ -9,9 +9,9 @@ This report evaluates **Our 3-Layer Defense Framework** against standard industr
 | Undefended | 100.0% | 100.0% | 0.0% | 0.0 ms | ❌ Vulnerable |
 | Spotlighting | 55.6% | 100.0% | 0.0% | 0.0 ms | ❌ Vulnerable |
 | Sandwich | 55.6% | 100.0% | 0.0% | 0.0 ms | ❌ Vulnerable |
-| Perplexity Filter | 77.8% | 100.0% | 0.0% | 0.6 ms | ❌ Vulnerable |
-| PromptGuard | 27.8% | 100.0% | 0.0% | 0.6 ms | ⚠️ Partial Protection |
-| **Our 3-Layer Defense** | **0.0%** | 50.0% | 50.0% | 1058.2 ms | 🏆 **Best Overall Defense** |
+| Perplexity Filter | 77.8% | 100.0% | 0.0% | 0.1 ms | ❌ Vulnerable |
+| PromptGuard | 27.8% | 100.0% | 0.0% | 0.1 ms | ⚠️ Partial Protection |
+| **Our 3-Layer Defense** | **0.0%** | 50.0% | 50.0% | 112.1 ms | 🏆 **Best Overall Defense** |
 
 ---
 

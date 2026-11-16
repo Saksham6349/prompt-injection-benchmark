@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any
 
 from src.sandbox.state import SandboxState
@@ -52,7 +52,7 @@ def create_file(state: SandboxState, name: str, content: str, owner: str) -> Too
     cur = state.conn.cursor()
     cur.execute(
         "INSERT INTO files (name, content, owner, created_at) VALUES (?,?,?,?)",
-        (name, content, owner, datetime.utcnow().isoformat()),
+        (name, content, owner, datetime.now(timezone.utc).isoformat()),
     )
     state.conn.commit()
     file_id = cur.lastrowid

@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import sqlite3
-from datetime import datetime, timedelta
+from datetime import datetime, timezone, timedelta
 from typing import Any
 
 
@@ -317,6 +317,6 @@ class SandboxState:
         cur = self.conn.cursor()
         cur.execute(
             "INSERT INTO tool_call_log (tool_name, arguments, result, timestamp) VALUES (?,?,?,?)",
-            (tool_name, arguments, result, datetime.utcnow().isoformat()),
+            (tool_name, arguments, result, datetime.now(timezone.utc).isoformat()),
         )
         self.conn.commit()

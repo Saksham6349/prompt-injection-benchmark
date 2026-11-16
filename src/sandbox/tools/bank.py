@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any
 
 from src.sandbox.state import SandboxState
@@ -63,7 +63,7 @@ def transfer(
     cur.execute("UPDATE bank_accounts SET balance = balance + ? WHERE id = ?", (amount, to_account))
     cur.execute(
         "INSERT INTO bank_transactions (from_account, to_account, amount, description, timestamp) VALUES (?,?,?,?,?)",
-        (from_account, to_account, amount, description, datetime.utcnow().isoformat()),
+        (from_account, to_account, amount, description, datetime.now(timezone.utc).isoformat()),
     )
     state.conn.commit()
 

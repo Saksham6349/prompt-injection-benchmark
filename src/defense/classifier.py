@@ -83,9 +83,9 @@ class InjectionClassifier:
 
     def __init__(
         self,
-        model_name: str = "microsoft/deberta-v3-small",
+        model_name: str = "distilbert-base-uncased",
         model_path: str | None = None,
-        threshold: float = 0.5,
+        threshold: float = 0.15,
     ) -> None:
         if model_path is None:
             default_local = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "models", "injection_classifier"))

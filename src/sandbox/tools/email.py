@@ -55,12 +55,12 @@ def read_email(state: SandboxState, email_id: int) -> ToolOutput:
 
 def send_email(state: SandboxState, to: str, subject: str, body: str) -> ToolOutput:
     """Compose and store a new email from the agent's default account."""
-    from datetime import datetime
+    from datetime import datetime, timezone
 
     cur = state.conn.cursor()
     cur.execute(
         "INSERT INTO emails (sender, recipient, subject, body, read, timestamp) VALUES (?,?,?,?,?,?)",
-        ("agent@company.com", to, subject, body, 0, datetime.utcnow().isoformat()),
+        ("agent@company.com", to, subject, body, 0, datetime.now(timezone.utc).isoformat()),
     )
     state.conn.commit()
     content = f"Email sent to {to} with subject '{subject}'."
