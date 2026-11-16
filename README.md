@@ -1,11 +1,5 @@
 # Prompt-Injection Benchmark and Lightweight Defense for Tool-Using LLM Agents
 
-> **Capstone Project** — BCSE498J / CBS1904 · VIT SCOPE · Winter Semester 2026–2027  
-> **Submitted by**: Saksham (Registration No. — _fill in_)  
-> **Guide**: _fill in_  
-> **Google Form Submission Deadline**: 20 November 2026  
-> **Review-I**: 9–11 December 2026 | **Review-II**: 28–29 January 2027
-
 ---
 
 ## Table of Contents
@@ -21,7 +15,7 @@
 9. [Running the Project](#9-running-the-project)
 10. [Test Suite](#10-test-suite)
 11. [Known Issues & Vulnerabilities](#11-known-issues--vulnerabilities)
-12. [Roadmap](#12-roadmap)
+
 
 ---
 
