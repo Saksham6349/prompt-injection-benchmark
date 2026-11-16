@@ -463,25 +463,6 @@ python -m pytest tests/ -v
 
 ---
 
-## 12. Roadmap
-
-### Review-II Targets (28–29 January 2027)
-
-- [ ] Streamlit web dashboard (`scripts/dashboard.py`) with live per-layer toggle and sandbox state viewer
-- [ ] HMAC-signed provenance tags to prevent tag-spoofing attacks (SEC-04)
-- [ ] Semantic intent classifier to replace keyword heuristic in Layer 3 (SEC-02)
-- [ ] Full 500-case benchmark run with real LLM provider (Gemini 2.5 Flash)
-- [ ] Adversarial fine-tuning round with generated evasion examples
-- [ ] Policy allow-list tuning to fix utility FPR in ablation (BUG-04)
-
-### Final Review Targets
-
-- [ ] IEEE 6-page paper manuscript (`docs/paper_draft.md`)
-- [ ] Public benchmark leaderboard JSON
-- [ ] Docker-based reproducible evaluation environment
-- [ ] Cross-lingual evaluation: Hindi-only, Hinglish, and code-switched attacks
-
----
 
 ## Citation
 
