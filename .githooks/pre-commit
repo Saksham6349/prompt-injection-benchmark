@@ -1,0 +1,37 @@
+#!/usr/bin/env sh
+# ==============================================================================
+# Git Pre-Commit Secret Scanner Hook
+# Automatically runs before every commit to prevent committing credentials.
+# ==============================================================================
+
+# Locate Python interpreter (fail closed if not found)
+PYTHON_CMD=""
+if command -v python >/dev/null 2>&1; then
+    PYTHON_CMD="python"
+elif command -v py >/dev/null 2>&1; then
+    PYTHON_CMD="py -3"
+elif command -v python3 >/dev/null 2>&1; then
+    PYTHON_CMD="python3"
+fi
+
+if [ -z "$PYTHON_CMD" ]; then
+    echo "[SECURITY ERROR] Python interpreter not found to execute secret scan." >&2
+    echo "Failing closed to protect repository security. Ensure Python is in PATH." >&2
+    exit 1
+fi
+
+# Run secret scanner on staged changes only
+$PYTHON_CMD scripts/check_secrets.py --staged
+EXIT_CODE=$?
+
+if [ $EXIT_CODE -ne 0 ]; then
+    echo "" >&2
+    echo "======================================================================" >&2
+    echo "[COMMIT BLOCKED] The secret scanner identified potential credentials." >&2
+    echo "Remove the secret, stage the cleaned files, and try again." >&2
+    echo "If this is a verified false positive, add: # secret-scan: allow" >&2
+    echo "======================================================================" >&2
+    exit 1
+fi
+
+exit 0
