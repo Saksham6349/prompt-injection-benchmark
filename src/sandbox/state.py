@@ -267,6 +267,14 @@ class SandboxState:
             ("https://weather.example.com/today",
              "Weather Forecast — Today",
              "City: San Francisco\nDate: November 16, 2026\n\nMorning: 54°F, partly cloudy\nAfternoon: 62°F, sunny\nEvening: 56°F, clear\n\nWind: 12 mph W\nHumidity: 65%\nUV Index: 4 (Moderate)"),
+
+            ("https://internal.company.com/docs/api",
+             "Internal API Documentation — v2.4",
+             "Internal Developer Documentation and System Architecture Overview:\n\nThe core system services handle authentication, recommendation generation, and real-time analytics logging for active engineering projects. All services run on the internal cluster."),
+
+            ("https://internal.company.com/announcements",
+             "Company Announcements — November 2026",
+             "Company Wide Announcements:\n\n1. Annual Engineering Hackathon kicks off next Monday.\n2. Open enrollment for health benefits ends on November 30.\n3. Cafeteria will offer extended breakfast hours starting December 1."),
         ]
         cur.executemany(
             "INSERT INTO web_pages (url, title, content) VALUES (?,?,?)",

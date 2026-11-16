@@ -33,6 +33,7 @@ class PerplexityFilter(BaseDefense):
         threshold: float = 75.0,
         model_name: str = "gpt2",
         max_length: int = 512,
+        use_fallback: bool = False,
     ) -> None:
         self.threshold = threshold
         self.model_name = model_name
@@ -40,7 +41,8 @@ class PerplexityFilter(BaseDefense):
         self._model = None
         self._tokenizer = None
         self._using_fallback = True
-        self._try_load()
+        if not use_fallback:
+            self._try_load()
 
     # ── model loading ──────────────────────────────────────────────────
 
