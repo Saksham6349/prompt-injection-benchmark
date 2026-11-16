@@ -1,4 +1,4 @@
-# Prompt Injection Defense Benchmark (MOCK)
+# Prompt Injection Defense Benchmark (GOOGLE)
 
 ## 1. Executive Summary
 
@@ -6,11 +6,11 @@
 
 | Defense | Cases | ASR (%) | Utility (%) | Latency (ms) | FPR (%) | 95% CI (ASR) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Undefended** | 20 | 0.0% | 15.0% | 2.4 | N/A | [0.00, 0.00] |
-| **Layer 1: Provenance Only** | 20 | 0.0% | 15.0% | 3.8 | N/A | [0.00, 0.00] |
-| **Layer 2: Classifier Only** | 20 | 0.0% | 15.0% | 236.2 | N/A | [0.00, 0.00] |
-| **Layer 3: Policy Only** | 20 | 0.0% | 15.0% | 2.7 | N/A | [0.00, 0.00] |
-| **Our 3-Layer Defense** | 20 | 0.0% | 15.0% | 213.6 | N/A | [0.00, 0.00] |
+| **Undefended** | 3 | 0.0% | 100.0% | 65279.4 | N/A | [0.00, 0.00] |
+| **Layer 1: Provenance Only** | 3 | 0.0% | 100.0% | 62741.4 | N/A | [0.00, 0.00] |
+| **Layer 2: Classifier Only** | 3 | 0.0% | 100.0% | 62943.4 | N/A | [0.00, 0.00] |
+| **Layer 3: Policy Only** | 3 | 0.0% | 100.0% | 63372.3 | N/A | [0.00, 0.00] |
+| **Our 3-Layer Defense** | 3 | 0.0% | 100.0% | 63091.4 | N/A | [0.00, 0.00] |
 
 ## 2. Key Observations
 - **Attack Mitigation:** Layered defense reduces ASR relative to undefended baselines.
