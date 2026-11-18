@@ -1,0 +1,32 @@
+{
+  "PromptGuardBaseline": {
+    "model_identifier": "meta-llama/Prompt-Guard-86M",
+    "access_status": "Gated repo (401 Client Error on unauthenticated Hugging Face API request). Evaluated using repo's heuristic fallback.",
+    "default_threshold": 0.5,
+    "benign_fpr": 0.0,
+    "attack_recall": 0.028888888888888888,
+    "auroc": 0.5177777777777778,
+    "benign_unique_detected": 0,
+    "attack_unique_detected": 13
+  },
+  "PublicModelAudit": [
+    {
+      "model_name": "protectai/deberta-v3-base-prompt-injection-v2",
+      "license": "Apache-2.0",
+      "revision_sha": "90c9989b1a342275dd0d1a95aad283c04e075671",
+      "download_status": "Available on Hugging Face; weights (500MB) not cached locally and unauthenticated download throttled in current environment."
+    },
+    {
+      "model_name": "deepset/deberta-v3-base-injection",
+      "license": "Apache-2.0",
+      "revision_sha": "80dda00d0b0d9a03917a7685e2ddbcd28e04dbb1",
+      "download_status": "Available on Hugging Face; weights (500MB) not cached locally and unauthenticated download throttled in current environment."
+    },
+    {
+      "model_name": "fmops/distilbert-prompt-injection",
+      "license": "Apache-2.0",
+      "revision_sha": "c5da1fefd33c98c447b50dd806fe86aeb9e8c26c",
+      "download_status": "Available on Hugging Face; weights (255MB) not cached locally and unauthenticated download throttled in current environment."
+    }
+  ]
+}

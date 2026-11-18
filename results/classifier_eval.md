@@ -55,12 +55,34 @@ Thresholds do not transfer across disparate data distributions; threshold-free m
 
 | Evaluation Input Source | Model | Threshold $\tau$ | Attack Detection (N=450) | Benign Control FPR (N=50) | 95% Clopper-Pearson CI (Template Level) |
 | :--- | :--- | :---: | :---: | :---: | :---: |
-| **Real Sandbox Tool Outputs** (`scores_L2_inputs.jsonl`) | **DistilBERT** | $\tau^* = 0.4700$ | **100.0%** (450/450) | **100.0%** (50/50)\* | Atk: [79.4%, 100.0%]<br>Benign: [85.8%, 100.0%] |
+| **Real Sandbox Tool Outputs** (`scores_L2_inputs.jsonl`) | **DistilBERT** (Ablation Condition: *fails on tool-output channel (this checkpoint)*) | $\tau^* = 0.4700$ | **100.0%** (450/450) | **100.0%** (50/50)\* | Atk: [79.4%, 100.0%]<br>Benign: [85.8%, 100.0%] |
+| **Real Sandbox Tool Outputs** | **PromptGuard Baseline** (Heuristic Fallback) | $\tau = 0.5000$ | 2.89% (13/450) | **0.0%** (0/50) | AUROC: 0.5178 |
 | **Offline User Task Commands** (`scores_benchmark_frozen.jsonl`) | **DistilBERT** | $\tau^* = 0.4700$ | **100.0%** (450/450) | 44.0% (22/50) | Atk: [79.4%, 100.0%]<br>Benign: [24.4%, 65.1%] |
 | **Offline User Task Commands** | **DistilBERT** | $\tau = 0.9772$ (Exploratory) | **100.0%** (450/450) | 22.0% (11/50) | Atk: [79.4%, 100.0%]<br>Benign: [9.3%, 47.6%] |
 | **Offline User Task Commands** | **TF-IDF + LR** | $\tau^* = 0.4700$ | 68.89% (310/450) | **0.0%** (0/50) | Atk: [44.7%, 86.6%]<br>Benign: [0.0%, 14.2%] |
 
-*\*Critical Finding: Fine-tuned DistilBERT flags 100% of structured sandbox tool outputs (API payloads, JSON tables, file metadata) as prompt injections at deployment threshold $\tau=0.4700$. Until retrained on real tool outputs and hard negatives, Layer 2 is classified as UNRELIABLE and must not operate as an autonomous blocking gate.*
+> [!CAUTION]
+> **Domain-Mismatch Empirical Hypothesis & Channel Failure (This Checkpoint)**:
+> Layer 2 (fine-tuned DistilBERT) is **excluded from default pipeline configurations** (default is L1 Provenance + L3 Policy) and retained solely as an ablation condition labeled *"fails on tool-output channel (this checkpoint)"*.
+>
+> To test whether this channel failure is caused by formatting layout (headers, linebreaks) or deeper semantic features, we conducted controlled variant testing on all 500 cases (`results/domain_mismatch_eval.json`):
+> 1. **Training Corpus Baseline** (`data/splits/train.csv`, N=8,179): Mean length is 10.74 words (median 9.0; slabs=10.19 words, deepset=19.95 words). Only **0.15%** of training samples contain newlines (`\n`), and only **0.86%** contain key-value headers.
+> 2. **Controlled Variant Scoring on Sandbox Outputs (N=500)**:
+>    - **As-Is Sandbox Outputs**: Benign mean score 0.9776 (median 0.9971), Benign FPR 100.0%, AUROC = 0.6162.
+>    - **Headers Stripped (Body Only)**: Benign mean score 0.9756 (median 0.9970), Benign FPR 100.0%, AUROC = 0.5402.
+>    - **Reflowed Prose (Single-Line)**: Benign mean score 0.9776 (median 0.9971), Benign FPR 100.0%, AUROC = 0.6162.
+>
+> **Hypothesis Verdict**: Stripping structured headers and flattening multiline formatting does *not* eliminate false positives. The 100% FPR is not an artifact of header markers or newlines, but indicates that this DistilBERT checkpoint has generalized "injection" to include dense, factual business schemas (API specs, email listings, transaction records). Future retraining requires a large corpus of authentic tool outputs with contrastive hard negatives.
+
+### 4.2 Counterfactual Probes & Neutralization Audit
+
+A rigorous audit of counterfactual transformations (`results/probe_neutralization_audit.json`) explains earlier evaluation anomalies:
+- **Hash Invariance in Naive Probes**: In `p2_payload_only`, 84/450 cases had identical SHA-256 hashes to `p1_original_attack` because single-line attacks lacked delimiters for regex splitting. Furthermore, `p2` and `p7` exhibited identical 421/450 detection because the naive neutralizer only masked 9 isolated verbs with `[ACTION]`, leaving persona directives, base64 payloads, and tool signatures fully intact.
+- **True Neutralization & Keywords-Only Tests**:
+  - **Original Unique Templates (N=16)**: 16 / 16 detected (100.0%, mean score 0.9970).
+  - **Truly Neutralized (Commands, Syntax, Base64 Stripped)**: 14 / 16 detected (87.5%, mean score 0.8686; 393/450 overall).
+  - **Keywords-Only (Isolated Trigger Words, No Command Grammar)**: Detection drops to **7 / 16 (43.8%, mean score 0.4131; 197/450 overall)**.
+  This confirms that removing imperative grammar significantly degrades classifier activation, but residual business keywords still trigger over-sensitive features in this checkpoint.
 
 ### 4.2 Benchmark Text Repetition & Effective Sample Size ($N_{eff}$)
 

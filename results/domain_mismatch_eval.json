@@ -1,0 +1,88 @@
+{
+  "training_corpus_analysis": {
+    "overall": {
+      "n_samples": 8179,
+      "words": {
+        "mean": 10.741899987773566,
+        "median": 9.0,
+        "min": 1,
+        "max": 783,
+        "p25": 7.0,
+        "p75": 11.0
+      },
+      "chars": {
+        "mean": 66.75314830663895,
+        "median": 53.0
+      },
+      "fraction_with_newlines": 0.0014671720259200392,
+      "fraction_with_key_value_headers": 0.008558503484533561,
+      "fraction_with_html_or_json": 0.015527570607653748
+    },
+    "slabs": {
+      "n_samples": 7716,
+      "words": {
+        "mean": 10.189476412649041,
+        "median": 8.0,
+        "min": 1,
+        "max": 89,
+        "p25": 7.0,
+        "p75": 11.0
+      },
+      "chars": {
+        "mean": 63.440124416796266,
+        "median": 53.0
+      },
+      "fraction_with_newlines": 0.0002592016588906169,
+      "fraction_with_key_value_headers": 0.008164852255054433,
+      "fraction_with_html_or_json": 0.01607050285121825
+    },
+    "deepset": {
+      "n_samples": 463,
+      "words": {
+        "mean": 19.94816414686825,
+        "median": 10.0,
+        "min": 2,
+        "max": 783,
+        "p25": 6.0,
+        "p75": 21.0
+      },
+      "chars": {
+        "mean": 121.96544276457884,
+        "median": 64.0
+      },
+      "fraction_with_newlines": 0.02159827213822894,
+      "fraction_with_key_value_headers": 0.01511879049676026,
+      "fraction_with_html_or_json": 0.0064794816414686825
+    }
+  },
+  "text_variant_experiment": {
+    "as_is": {
+      "benign_mean_score": 0.9775727200508117,
+      "benign_median_score": 0.9971292614936829,
+      "benign_fpr_at_0_47": 1.0,
+      "attack_mean_score": 0.9976837686697642,
+      "attack_median_score": 0.9978100657463074,
+      "attack_recall_at_0_47": 1.0,
+      "auroc": 0.6162222222222222
+    },
+    "headers_stripped": {
+      "benign_mean_score": 0.9756166422367096,
+      "benign_median_score": 0.9970455765724182,
+      "benign_fpr_at_0_47": 1.0,
+      "attack_mean_score": 0.9965287511878543,
+      "attack_median_score": 0.9978100657463074,
+      "attack_recall_at_0_47": 1.0,
+      "auroc": 0.5402222222222222
+    },
+    "reflowed_prose": {
+      "benign_mean_score": 0.9775727200508117,
+      "benign_median_score": 0.9971292614936829,
+      "benign_fpr_at_0_47": 1.0,
+      "attack_mean_score": 0.9976837686697642,
+      "attack_median_score": 0.9978100657463074,
+      "attack_recall_at_0_47": 1.0,
+      "auroc": 0.6162222222222222
+    }
+  },
+  "conclusion": "EMPIRICAL HYPOTHESIS TEST: Stripping structured headers and reflowing tool outputs to single-line prose does NOT eliminate false positives. Benign mean score remains 0.9756 (FPR=100.0%) for headers-stripped and 0.9776 (FPR=100.0%) for reflowed prose. This demonstrates that the failure of this DistilBERT checkpoint on the tool-output channel is not merely caused by header syntax or multi-line layout, but reflects a fundamental semantic over-sensitivity to business entities, instructions, and factual schemas present in tool outputs."
+}

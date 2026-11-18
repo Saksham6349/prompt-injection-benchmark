@@ -1,0 +1,114 @@
+{
+  "total_populated_cells": 60,
+  "theoretical_cells": 160,
+  "populated_fraction": 0.375,
+  "techniques": [
+    {
+      "technique": "context_manipulation",
+      "populated_cells": 12,
+      "total_cases": 84,
+      "actions": [
+        "delete_event",
+        "delete_file",
+        "transfer"
+      ],
+      "channels": [
+        "api_response",
+        "email",
+        "retrieved_document",
+        "web_page"
+      ]
+    },
+    {
+      "technique": "encoded_payload",
+      "populated_cells": 4,
+      "total_cases": 28,
+      "actions": [
+        "send_email"
+      ],
+      "channels": [
+        "api_response",
+        "email",
+        "retrieved_document",
+        "web_page"
+      ]
+    },
+    {
+      "technique": "hidden_text",
+      "populated_cells": 8,
+      "total_cases": 57,
+      "actions": [
+        "send_email",
+        "transfer"
+      ],
+      "channels": [
+        "api_response",
+        "email",
+        "retrieved_document",
+        "web_page"
+      ]
+    },
+    {
+      "technique": "multilingual",
+      "populated_cells": 12,
+      "total_cases": 112,
+      "actions": [
+        "delete_event",
+        "send_email",
+        "transfer"
+      ],
+      "channels": [
+        "api_response",
+        "email",
+        "retrieved_document",
+        "web_page"
+      ]
+    },
+    {
+      "technique": "payload_splitting",
+      "populated_cells": 4,
+      "total_cases": 28,
+      "actions": [
+        "delete_file"
+      ],
+      "channels": [
+        "api_response",
+        "email",
+        "retrieved_document",
+        "web_page"
+      ]
+    },
+    {
+      "technique": "role_play",
+      "populated_cells": 12,
+      "total_cases": 85,
+      "actions": [
+        "delete_event",
+        "send_email",
+        "transfer"
+      ],
+      "channels": [
+        "api_response",
+        "email",
+        "retrieved_document",
+        "web_page"
+      ]
+    },
+    {
+      "technique": "tool_call_forging",
+      "populated_cells": 8,
+      "total_cases": 56,
+      "actions": [
+        "delete_file",
+        "send_email"
+      ],
+      "channels": [
+        "api_response",
+        "email",
+        "retrieved_document",
+        "web_page"
+      ]
+    }
+  ],
+  "multilingual_explanation": "3 actions x 4 channels = 12 populated cells (delete_file omitted)"
+}

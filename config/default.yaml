@@ -51,7 +51,7 @@ defense:
     tag_format: "structured"          # "structured" or "xml"
 
   classifier:
-    enabled: true
+    enabled: false                    # Disabled by default: Layer 2 fails on tool-output channel (ablation condition only)
     model_name: "distilbert-base-uncased"
     model_path: "models/injection_classifier"
     threshold: 0.4700                 # Calibrated optimal F1-max threshold (results/frozen_threshold.json)

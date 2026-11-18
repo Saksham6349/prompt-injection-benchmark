@@ -155,7 +155,7 @@ class BenchmarkCase:
 @dataclass
 class DefenseConfig:
     enable_provenance: bool = True
-    enable_classifier: bool = True
+    enable_classifier: bool = False   # Disabled by default: Layer 2 fails on tool-output channel (ablation condition only)
     enable_policy: bool = True
     classifier_model: str = "microsoft/deberta-v3-small"
     classifier_threshold: float = 0.5
