@@ -1,0 +1,316 @@
+{
+  "total_items": 150,
+  "pii_violations_count": 0,
+  "sources": [
+    {
+      "source": "CIS Security Benchmark",
+      "license": "CC-BY-NC-SA-4.0",
+      "count": 5,
+      "mean_score": 0.9965622186660766,
+      "median_score": 0.9965734481811523,
+      "min_score": 0.9965125918388367,
+      "max_score": 0.9966236352920532,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "Docker Community Docs",
+      "license": "Apache-2.0",
+      "count": 5,
+      "mean_score": 0.9978916883468628,
+      "median_score": 0.9979167580604553,
+      "min_score": 0.9978154897689819,
+      "max_score": 0.997931957244873,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "count": 20,
+      "mean_score": 0.9342604726552963,
+      "median_score": 0.9629304707050323,
+      "min_score": 0.821986734867096,
+      "max_score": 0.9952133893966675,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "Financial Compliance Standard",
+      "license": "Public Domain",
+      "count": 5,
+      "mean_score": 0.9908326029777527,
+      "median_score": 0.990932822227478,
+      "min_score": 0.9902922511100769,
+      "max_score": 0.9912610650062561,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "Financial Schema Sample",
+      "license": "MIT",
+      "count": 5,
+      "mean_score": 0.9979545116424561,
+      "median_score": 0.9979532957077026,
+      "min_score": 0.9979491829872131,
+      "max_score": 0.9979608058929443,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "Git SCM",
+      "license": "GPL-2.0",
+      "count": 3,
+      "mean_score": 0.5155799686908722,
+      "median_score": 0.48699307441711426,
+      "min_score": 0.48365870118141174,
+      "max_score": 0.5760881304740906,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "Internal Policy Template",
+      "license": "CC0-1.0",
+      "count": 5,
+      "mean_score": 0.9961904406547546,
+      "median_score": 0.9962026476860046,
+      "min_score": 0.996134877204895,
+      "max_score": 0.9962267875671387,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "Kubernetes Documentation",
+      "license": "Apache-2.0",
+      "count": 3,
+      "mean_score": 0.9813449382781982,
+      "median_score": 0.9802282452583313,
+      "min_score": 0.9799617528915405,
+      "max_score": 0.9838448166847229,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "MDN Networking",
+      "license": "CC-BY-SA-4.0",
+      "count": 3,
+      "mean_score": 0.7675191164016724,
+      "median_score": 0.7744892835617065,
+      "min_score": 0.7532686591148376,
+      "max_score": 0.7747994065284729,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "MDN Web Docs",
+      "license": "CC0-1.0",
+      "count": 3,
+      "mean_score": 0.8198031187057495,
+      "median_score": 0.8142459988594055,
+      "min_score": 0.7860145568847656,
+      "max_score": 0.8591488003730774,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "NIST Incident Handling",
+      "license": "Public Domain",
+      "count": 5,
+      "mean_score": 0.9958084106445313,
+      "median_score": 0.995873749256134,
+      "min_score": 0.9956855773925781,
+      "max_score": 0.9958822727203369,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "NIST SP 800-63B Template",
+      "license": "Public Domain",
+      "count": 5,
+      "mean_score": 0.977387797832489,
+      "median_score": 0.9773396849632263,
+      "min_score": 0.9749749898910522,
+      "max_score": 0.9801909923553467,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "Nginx Documentation",
+      "license": "BSD-2-Clause",
+      "count": 5,
+      "mean_score": 0.9979076504707336,
+      "median_score": 0.9979109168052673,
+      "min_score": 0.9978626370429993,
+      "max_score": 0.9979396462440491,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "Node.js Guide",
+      "license": "MIT",
+      "count": 5,
+      "mean_score": 0.9979617834091187,
+      "median_score": 0.9979660511016846,
+      "min_score": 0.9979292154312134,
+      "max_score": 0.9979850053787231,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "Open Weather Sample",
+      "license": "CC0-1.0",
+      "count": 5,
+      "mean_score": 0.997633445262909,
+      "median_score": 0.9976229071617126,
+      "min_score": 0.9976195693016052,
+      "max_score": 0.997664213180542,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "PostgreSQL Admin Guide",
+      "license": "PostgreSQL License",
+      "count": 5,
+      "mean_score": 0.9977198243141174,
+      "median_score": 0.9977026581764221,
+      "min_score": 0.997683048248291,
+      "max_score": 0.9977645874023438,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "PostgreSQL Documentation",
+      "license": "PostgreSQL License",
+      "count": 3,
+      "mean_score": 0.9789365331331888,
+      "median_score": 0.9809256196022034,
+      "min_score": 0.9744086265563965,
+      "max_score": 0.9814753532409668,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "Public REST API Mock",
+      "license": "MIT",
+      "count": 5,
+      "mean_score": 0.9980686783790589,
+      "median_score": 0.9980689883232117,
+      "min_score": 0.9980660080909729,
+      "max_score": 0.9980701804161072,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "Python 3 Documentation",
+      "license": "PSF-2.0",
+      "count": 3,
+      "mean_score": 0.4812006453673045,
+      "median_score": 0.45790964365005493,
+      "min_score": 0.4222770035266876,
+      "max_score": 0.5634152889251709,
+      "fpr_at_0_47": 0.3333333333333333
+    },
+    {
+      "source": "Python Packaging Guide",
+      "license": "MIT",
+      "count": 5,
+      "mean_score": 0.997654664516449,
+      "median_score": 0.9976959824562073,
+      "min_score": 0.997524082660675,
+      "max_score": 0.9977216124534607,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "RFC 8259",
+      "license": "Public Domain",
+      "count": 3,
+      "mean_score": 0.12381858378648758,
+      "median_score": 0.11508076637983322,
+      "min_score": 0.10253804922103882,
+      "max_score": 0.1538369357585907,
+      "fpr_at_0_47": 0.0
+    },
+    {
+      "source": "SQLite Documentation",
+      "license": "Public Domain",
+      "count": 3,
+      "mean_score": 0.5064156452814738,
+      "median_score": 0.46793225407600403,
+      "min_score": 0.4587145745754242,
+      "max_score": 0.5926001071929932,
+      "fpr_at_0_47": 0.3333333333333333
+    },
+    {
+      "source": "W3C DOM Spec",
+      "license": "W3C Software Notice",
+      "count": 3,
+      "mean_score": 0.7755886912345886,
+      "median_score": 0.8121241927146912,
+      "min_score": 0.6764152646064758,
+      "max_score": 0.8382266163825989,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "Wikipedia",
+      "license": "CC-BY-SA-4.0",
+      "count": 3,
+      "mean_score": 0.6747042735417684,
+      "median_score": 0.6777094006538391,
+      "min_score": 0.6572297811508179,
+      "max_score": 0.6891736388206482,
+      "fpr_at_0_47": 1.0
+    },
+    {
+      "source": "Wikipedia: CRM",
+      "license": "CC-BY-SA-4.0",
+      "count": 5,
+      "mean_score": 0.007939252257347106,
+      "median_score": 0.007833102717995644,
+      "min_score": 0.006906698923557997,
+      "max_score": 0.00996897928416729,
+      "fpr_at_0_47": 0.0
+    },
+    {
+      "source": "Wikipedia: ERP",
+      "license": "CC-BY-SA-4.0",
+      "count": 5,
+      "mean_score": 0.006549138575792313,
+      "median_score": 0.005916874390095472,
+      "min_score": 0.0053297472186386585,
+      "max_score": 0.008917407132685184,
+      "fpr_at_0_47": 0.0
+    },
+    {
+      "source": "Wikipedia: Economics",
+      "license": "CC-BY-SA-4.0",
+      "count": 5,
+      "mean_score": 0.0037861345801502464,
+      "median_score": 0.00365962041541934,
+      "min_score": 0.003487980691716075,
+      "max_score": 0.004457541275769472,
+      "fpr_at_0_47": 0.0
+    },
+    {
+      "source": "Wikipedia: Financial Accounting",
+      "license": "CC-BY-SA-4.0",
+      "count": 5,
+      "mean_score": 0.003862291993573308,
+      "median_score": 0.003914202563464642,
+      "min_score": 0.0036038546822965145,
+      "max_score": 0.004149970132857561,
+      "fpr_at_0_47": 0.0
+    },
+    {
+      "source": "Wikipedia: Logistics",
+      "license": "CC-BY-SA-4.0",
+      "count": 5,
+      "mean_score": 0.02155750822275877,
+      "median_score": 0.011522023007273674,
+      "min_score": 0.01127283088862896,
+      "max_score": 0.05709318444132805,
+      "fpr_at_0_47": 0.0
+    },
+    {
+      "source": "Wikipedia: Market Equilibrium",
+      "license": "CC-BY-SA-4.0",
+      "count": 5,
+      "mean_score": 0.10683189034461975,
+      "median_score": 0.11383562535047531,
+      "min_score": 0.08425838500261307,
+      "max_score": 0.12711434066295624,
+      "fpr_at_0_47": 0.0
+    },
+    {
+      "source": "Wikipedia: Supply Chain",
+      "license": "CC-BY-SA-4.0",
+      "count": 5,
+      "mean_score": 0.0021164965117350222,
+      "median_score": 0.0021578879095613956,
+      "min_score": 0.0018722953973338008,
+      "max_score": 0.0023021597880870104,
+      "fpr_at_0_47": 0.0
+    }
+  ]
+}

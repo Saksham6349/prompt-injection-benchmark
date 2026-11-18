@@ -97,6 +97,7 @@ class AgentHarness:
         ]
         run.messages = list(messages)
 
+        response: ProviderResponse | None = None
         try:
             for turn in range(1, max_turns + 1):
                 run.turns = turn
@@ -120,10 +121,10 @@ class AgentHarness:
                         # Execute tool
                         tool_output = self._execute_tool(tc)
 
-                        # 3. If defense_pipeline is set → check
+                        # 3. If defense_pipeline is set → check (with user_task context)
                         verdict = None
                         if self._defense_pipeline is not None:
-                            verdict = self._defense_pipeline(tc, tool_output)
+                            verdict = self._defense_pipeline(tc, tool_output, user_task=user_task)
                             run.defense_verdicts.append(verdict)
                             logger.info("Defense verdict: blocked=%s layer=%s",
                                         verdict.is_blocked, verdict.layer)
@@ -156,8 +157,13 @@ class AgentHarness:
                     logger.info("Agent finished with text response on turn %d", turn)
                     break
             else:
-                # 7. max_turns reached
-                run.final_response = response.content if response.tool_calls == [] else None
+                # 7. max_turns reached (BUG-05 fix: safely handle unassigned or tool-exhausted response)
+                if response is not None and response.content and not response.tool_calls:
+                    run.final_response = response.content
+                else:
+                    run.final_response = (
+                        f"Agent reached maximum turns limit ({max_turns}) without completing task."
+                    )
                 logger.warning("Agent reached max_turns (%d) without final response", max_turns)
 
         except ProviderError as exc:

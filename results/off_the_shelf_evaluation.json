@@ -1,0 +1,125 @@
+{
+  "protectai/deberta-v3-base-prompt-injection-v2": {
+    "model_id": "protectai/deberta-v3-base-prompt-injection-v2",
+    "revision_sha": "90c9989b1a342275dd0d1a95aad283c04e075671",
+    "license": "apache-2.0",
+    "default_threshold": 0.5,
+    "training_overlap_notes": "Trained on composite multi-source dataset (XSTest-v2, VMware open-instruct, alespalla, Grok conversation, Harelix mixed techniques, Salad-Data, jackhhao jailbreak).",
+    "unique_sandbox_evaluation": {
+      "n_attack": 18,
+      "n_benign": 23,
+      "logit_auroc": 0.7717391304347826,
+      "logit_auprc": 0.7381452424774578,
+      "recall": 0.16666666666666666,
+      "recall_counts": "3/18",
+      "fpr": 0.0,
+      "fpr_counts": "0/23"
+    },
+    "all_500_sandbox_evaluation": {
+      "n_attack": 450,
+      "n_benign": 50,
+      "logit_auroc": 0.8232444444444446,
+      "recall": 0.024444444444444446,
+      "recall_counts": "11/450",
+      "fpr": 0.0,
+      "fpr_counts": "0/50"
+    },
+    "external_evaluation": {
+      "non_imperative_benign": {
+        "fpr": 0.0,
+        "counts": "0/100"
+      },
+      "hard_negatives": {
+        "fpr": 0.1,
+        "counts": "5/50"
+      },
+      "overall_external": {
+        "fpr": 0.03333333333333333,
+        "counts": "5/150"
+      },
+      "auroc_vs_unique_attacks": 0.77
+    }
+  },
+  "fmops/distilbert-prompt-injection": {
+    "model_id": "fmops/distilbert-prompt-injection",
+    "revision_sha": "c5da1fefd33c98c447b50dd806fe86aeb9e8c26c",
+    "license": "apache-2.0",
+    "default_threshold": 0.5,
+    "training_overlap_notes": "Trained on deepset/prompt-injections. Note high training-data overlap risk with benchmark training corpus.",
+    "unique_sandbox_evaluation": {
+      "n_attack": 18,
+      "n_benign": 23,
+      "logit_auroc": 0.7318840579710145,
+      "logit_auprc": 0.6379679151219362,
+      "recall": 1.0,
+      "recall_counts": "18/18",
+      "fpr": 1.0,
+      "fpr_counts": "23/23"
+    },
+    "all_500_sandbox_evaluation": {
+      "n_attack": 450,
+      "n_benign": 50,
+      "logit_auroc": 0.8860222222222223,
+      "recall": 1.0,
+      "recall_counts": "450/450",
+      "fpr": 1.0,
+      "fpr_counts": "50/50"
+    },
+    "external_evaluation": {
+      "non_imperative_benign": {
+        "fpr": 1.0,
+        "counts": "100/100"
+      },
+      "hard_negatives": {
+        "fpr": 1.0,
+        "counts": "50/50"
+      },
+      "overall_external": {
+        "fpr": 1.0,
+        "counts": "150/150"
+      },
+      "auroc_vs_unique_attacks": 0.8703703703703703
+    }
+  },
+  "deepset/deberta-v3-base-injection": {
+    "model_id": "deepset/deberta-v3-base-injection",
+    "revision_sha": "80dda00d0b0d9a03917a7685e2ddbcd28e04dbb1",
+    "license": "mit",
+    "default_threshold": 0.5,
+    "training_overlap_notes": "Trained on deepset/prompt-injections. Direct training-data overlap risk with benchmark training corpus.",
+    "unique_sandbox_evaluation": {
+      "n_attack": 18,
+      "n_benign": 23,
+      "logit_auroc": 0.929951690821256,
+      "logit_auprc": 0.9392526455026455,
+      "recall": 1.0,
+      "recall_counts": "18/18",
+      "fpr": 1.0,
+      "fpr_counts": "23/23"
+    },
+    "all_500_sandbox_evaluation": {
+      "n_attack": 450,
+      "n_benign": 50,
+      "logit_auroc": 0.6862666666666667,
+      "recall": 1.0,
+      "recall_counts": "450/450",
+      "fpr": 1.0,
+      "fpr_counts": "50/50"
+    },
+    "external_evaluation": {
+      "non_imperative_benign": {
+        "fpr": 1.0,
+        "counts": "100/100"
+      },
+      "hard_negatives": {
+        "fpr": 1.0,
+        "counts": "50/50"
+      },
+      "overall_external": {
+        "fpr": 1.0,
+        "counts": "150/150"
+      },
+      "auroc_vs_unique_attacks": 0.874074074074074
+    }
+  }
+}

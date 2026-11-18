@@ -1,0 +1,75 @@
+{
+  "heuristic_validation_50_samples": {
+    "sample_size": 50,
+    "agreed_count": 50,
+    "accuracy": 1.0
+  },
+  "contingency_table": {
+    "0": {
+      "imperative": 211,
+      "question": 2889,
+      "statement": 1566
+    },
+    "1": {
+      "imperative": 358,
+      "question": 583,
+      "statement": 2572
+    }
+  },
+  "chi2_test": {
+    "statistic": 1685.0733840915175,
+    "p_value": 0.0,
+    "degrees_of_freedom": 2,
+    "hypothesis_verdict": "Hypothesis Test: Mood syntax strongly correlates with class label in training corpus (chi2=1685.07, p < 1e-10). Attacks are overwhelmingly imperative/command-driven, whereas benign samples are dominated by statements and questions."
+  },
+  "breakdown_by_source_and_label": {
+    "deepset": {
+      "label_0": {
+        "total": 279,
+        "question": 0.6953405017921147,
+        "imperative": 0.007168458781362007,
+        "statement": 0.2974910394265233,
+        "raw_counts": {
+          "statement": 83,
+          "question": 194,
+          "imperative": 2
+        }
+      },
+      "label_1": {
+        "total": 184,
+        "question": 0.5108695652173914,
+        "imperative": 0.05434782608695652,
+        "statement": 0.43478260869565216,
+        "raw_counts": {
+          "question": 94,
+          "statement": 80,
+          "imperative": 10
+        }
+      }
+    },
+    "slabs": {
+      "label_0": {
+        "total": 4387,
+        "question": 0.6143150216548895,
+        "imperative": 0.04764075678139959,
+        "statement": 0.33804422156371094,
+        "raw_counts": {
+          "question": 2695,
+          "imperative": 209,
+          "statement": 1483
+        }
+      },
+      "label_1": {
+        "total": 3329,
+        "question": 0.14689095824571943,
+        "imperative": 0.10453589666566536,
+        "statement": 0.7485731450886152,
+        "raw_counts": {
+          "statement": 2492,
+          "question": 489,
+          "imperative": 348
+        }
+      }
+    }
+  }
+}

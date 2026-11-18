@@ -157,9 +157,11 @@ class DefenseConfig:
     enable_provenance: bool = True
     enable_classifier: bool = False   # Disabled by default: Layer 2 fails on tool-output channel (ablation condition only)
     enable_policy: bool = True
-    classifier_model: str = "microsoft/deberta-v3-small"
-    classifier_threshold: float = 0.5
+    classifier_model: str = "distilbert-base-uncased"
+    classifier_threshold: float = 0.4700
     policy_allow_list: dict[str, list[str]] = field(default_factory=dict)
+    policy_mode: str = "hardened"      # "hardened" (Phase 2 default) or "legacy" (Phase 1 baseline)
+    unpredictable_delimiters: bool = True # Nonce-based unpredictable delimiters in Layer 1
     # Maps user-intent keywords to allowed tool names
 
 

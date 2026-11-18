@@ -1,0 +1,18 @@
+{
+  "unique_attack_count": 17,
+  "unique_benign_count": 22,
+  "unique_text_auroc": 0.6898395721925134,
+  "unique_text_auprc": 0.5670804493268068,
+  "mann_whitney_u_statistic": 258.0,
+  "mann_whitney_p_value": 0.022928609888534367,
+  "permutation_p_value_b10000": 0.0018,
+  "attack_detection_clopper_pearson_95ci": [
+    0.8049356770309067,
+    1.0
+  ],
+  "benign_fpr_clopper_pearson_95ci": [
+    0.8456274871844254,
+    1.0
+  ],
+  "verdict": "Unique-Text AUROC is 0.6898. Mann-Whitney p=0.0229, Permutation p=0.0018. Attack 95% CI is [80.5%, 100.0%] (N=17), Benign FPR 95% CI is [84.6%, 100.0%] (N=22)."
+}

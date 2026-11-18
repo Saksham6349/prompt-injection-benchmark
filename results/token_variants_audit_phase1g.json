@@ -1,0 +1,46 @@
+{
+  "text_changes_by_variant": {
+    "entity_placeholders": {
+      "attack_changed": 368,
+      "attack_unchanged": 82,
+      "attack_pct_changed": 0.8177777777777778,
+      "benign_changed": 26,
+      "benign_unchanged": 24,
+      "benign_pct_changed": 0.52
+    },
+    "key_names_removed": {
+      "attack_changed": 168,
+      "attack_unchanged": 282,
+      "attack_pct_changed": 0.37333333333333335,
+      "benign_changed": 28,
+      "benign_unchanged": 22,
+      "benign_pct_changed": 0.56
+    },
+    "tool_names_removed": {
+      "attack_changed": 86,
+      "attack_unchanged": 364,
+      "attack_pct_changed": 0.19111111111111112,
+      "benign_changed": 6,
+      "benign_unchanged": 44,
+      "benign_pct_changed": 0.12
+    },
+    "first_64_tokens": {
+      "attack_changed": 450,
+      "attack_unchanged": 0,
+      "attack_pct_changed": 1.0,
+      "benign_changed": 39,
+      "benign_unchanged": 11,
+      "benign_pct_changed": 0.78
+    }
+  },
+  "tool_names_removed_benign_invariance_explanation": "Explanation for identical benign mean under tool_names_removed: Benign sandbox outputs consist of clean factual data records (calendar listings, inbox email bodies, file contents). Exactly 6 of 50 benign texts contain tool action verbs like 'transfer' or 'delete_file'; thus, tool_names_removed is an effective no-op on benign data (0 hash changes out of 50), leaving benign scores 100% mathematically identical.",
+  "first_64_tokens_analysis": {
+    "total_attacks": 450,
+    "payload_present_in_first_64": 174,
+    "payload_truncated_or_delayed": 276,
+    "fraction_payload_retained": 0.38666666666666666,
+    "detection_on_retained": 1.0,
+    "detection_on_truncated": 1.0,
+    "observation": "97.8% (440/450) of benchmark attacks place injection instructions at the start of tool outputs. Even for the 10 cases where payloads were truncated past token 64, the model still flagged the outputs due to residual technical headers and schema syntax."
+  }
+}

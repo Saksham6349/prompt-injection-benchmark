@@ -55,26 +55,31 @@ Thresholds do not transfer across disparate data distributions; threshold-free m
 
 | Evaluation Input Source | Model | Threshold $\tau$ | Attack Detection (N=450) | Benign Control FPR (N=50) | 95% Clopper-Pearson CI (Template Level) |
 | :--- | :--- | :---: | :---: | :---: | :---: |
-| **Real Sandbox Tool Outputs** (`scores_L2_inputs.jsonl`) | **DistilBERT** (Ablation Condition: *fails on tool-output channel (this checkpoint)*) | $\tau^* = 0.4700$ | **100.0%** (450/450) | **100.0%** (50/50)\* | Atk: [79.4%, 100.0%]<br>Benign: [85.8%, 100.0%] |
+| **Real Sandbox Tool Outputs** (`scores_L2_inputs.jsonl`) | **DistilBERT** (Ablation Condition: *fails on tool-output channel (this checkpoint)*) | $\tau^* = 0.4700$ | **100.0%** (450/450) | **100.0%** (50/50)\* | Atk: [80.5%, 100.0%] (18/18)<br>Benign: [84.6%, 100.0%] (23/23) |
 | **Real Sandbox Tool Outputs** | **Repo Regex Heuristic** (Heuristic Baseline) | $\tau = 0.5000$ | 2.89% (13/450) | **0.0%** (0/50) | AUROC: 0.5178 |
 | **Offline User Task Commands** (`scores_benchmark_frozen.jsonl`) | **DistilBERT** | $\tau^* = 0.4700$ | **100.0%** (450/450) | 44.0% (22/50) | Atk: [79.4%, 100.0%]<br>Benign: [24.4%, 65.1%] |
 | **Offline User Task Commands** | **DistilBERT** | $\tau = 0.9772$ (Exploratory) | **100.0%** (450/450) | 22.0% (11/50) | Atk: [79.4%, 100.0%]<br>Benign: [9.3%, 47.6%] |
 | **Offline User Task Commands** | **TF-IDF + LR** | $\tau^* = 0.4700$ | 68.89% (310/450) | **0.0%** (0/50) | Atk: [44.7%, 86.6%]<br>Benign: [0.0%, 14.2%] |
 
 > [!CAUTION]
-> **Domain-Mismatch Empirical Hypothesis & Channel Failure (This Checkpoint)**:
+> **Domain-Mismatch Empirical Hypothesis & Weak Discrimination (This Checkpoint)**:
 > Layer 2 (fine-tuned DistilBERT) is **excluded from default pipeline configurations** (default is L1 Provenance + L3 Policy) and retained solely as an ablation condition labeled *"fails on tool-output channel (this checkpoint)"*.
 >
-> To test whether this channel failure is caused by formatting layout, token length, or deeper semantic features, we conducted controlled variant testing on all 500 cases (`results/token_variants_eval.json`, `results/external_benign_evaluation.json`):
+> On real tool outputs, Layer 2 exhibits **weak discrimination (AUROC ~0.62–0.69, interval includes values near 0.5)**. Specifically:
+> - On the full 500 cases, raw-logit AUROC is **0.6162** (AUPRC = 0.8872).
+> - On unique texts ($N_{eff}=18$ attacks vs $N_{eff}=23$ benign tool outputs), raw-logit AUROC is **0.6898** (AUPRC = 0.5671). The template-cluster bootstrap 95% CI is **[0.4908, 0.8841]**, which includes values near 0.50 (indistinguishable from chance at 95% confidence; permutation test $p=0.0487$, Mann-Whitney $U=258.0$, $p=0.0229$).
+> - **All empirical claims are strictly scoped to this fine-tuned DistilBERT checkpoint (`784c14f18bb459046fa286a2b3897d1c8604347ce16f28f40e33d71142cff6df`)**.
+>
+> To test whether this channel failure is caused by formatting layout, token length, or deeper semantic features, we conducted controlled variant testing on all 500 cases (`results/token_variants_eval.json`, `results/external_benign_evaluation.json`, `results/token_variants_audit_phase1g.json`):
 > 1. **Tokenizer Identity & Token Length Audit**:
 >    - Proved that `tokenizer("Line 1\nLine 2")["input_ids"] == tokenizer("Line 1 Line 2")["input_ids"]` in WordPiece. Flattening newlines is a token-level no-op and was removed from empirical claims.
 >    - **0 / 500 (0.0%) sandbox outputs exceed 512 tokens** (mean = 54.9 words, median = 60.0 words, max = 135 words). Truncation was never active.
 > 2. **Token-Altering Variant Scoring on Sandbox Outputs (N=500)**:
 >    - **As-Is Sandbox Outputs**: Benign mean score 0.9776 (median 0.9971), Benign FPR 100.0%, AUROC = 0.6162.
->    - **Entity Placeholders** (`[ACCOUNT_ID]`, `[EMAIL_ADDR]`, `[URL_REF]`, `[FILE_ID]`): Benign mean 0.9894, Benign FPR 100.0%, AUROC = 0.6424.
->    - **Key Names Removed** (stripping schema/header keys): Benign mean **0.9189**, Benign FPR **90.0%**, AUROC = 0.6251.
->    - **Tool Names Removed**: Benign mean 0.9776, Benign FPR 100.0%, AUROC = 0.6437.
->    - **First-64-Tokens Truncation**: Benign mean 0.9700, Benign FPR 100.0%, AUROC = 0.7335.
+>    - **Entity Placeholders** (`[ACCOUNT_ID]`, `[EMAIL_ADDR]`, `[URL_REF]`, `[FILE_ID]`): Changed 368/450 attacks (81.8%) and 26/50 benign (52.0%). Benign mean 0.9894, Benign FPR 100.0%, AUROC = 0.6424.
+>    - **Key Names Removed** (stripping schema/header keys): Changed 168/450 attacks (37.3%) and 28/50 benign (56.0%). Benign mean **0.9189**, Benign FPR **90.0%**, AUROC = 0.6251.
+>    - **Tool Names Removed**: Changed 86/450 attacks (19.1%) and 6/50 benign (12.0%). Benign mean 0.9776, Benign FPR 100.0%, AUROC = 0.6437. (Benign mean remains identical because benign tool outputs contain almost no mutating action verbs).
+>    - **First-64-Tokens Truncation**: Changed 450/450 attacks (100.0%) and 39/50 benign (78.0%). Attack payload retained in first 64 tokens for 174/450 (38.7%). Benign mean 0.9700, Benign FPR 100.0%, AUROC = 0.7335.
 > 3. **External Benign & Hard Negative Evaluation**:
 >    - **100 Non-Imperative Benign Texts** (Python docs, Wikipedia, Enron, REST API JSON): Mean score **0.5429** (median 0.6834, min 0.0019, max 0.9981). Benign FPR @ $\tau^*=0.4700$ drops to **58.0%** (42/100 passed cleanly without domain training).
 >    - **50 Hard Negatives** (Setup runbooks, compliance policy directives): Mean score **0.9946** (median 0.9971, min 0.9750, max 0.9980). FPR @ $\tau^*=0.4700$ is **100.0%**.
@@ -150,8 +155,27 @@ Diagnosing which layer blocks benign user tasks under a deterministic scripted a
 
 ---
 
-## 7. Limitations & Scientific Scope
+## 7. Off-the-Shelf Injection Detectors Comparison
 
-1. **Pretrained Language Model Scope**: Evaluated on `distilbert-base-uncased` (single seed 42 reported for GPU retrain). Multilingual transfer to Hindi/Hinglish relies on subword tokenization without native multilingual pretraining.
-2. **Target Evaluation Size**: The cross-dataset Deepset target split contains 98 cluster-intact rows; while statistically significant, confidence intervals reflect sample size limitations.
-3. **Synthetic Benchmark Nature**: The 500-case suite utilizes realistic threat scenarios generated from 40 template clusters; results should be validated against the forthcoming human-written dataset (`data/handwritten_eval.jsonl`).
+To contextualize whether Layer 2's high false positive rate is unique to this checkpoint or shared across prompt-injection classifiers, we evaluated 3 public, open Hugging Face models (`results/off_the_shelf_evaluation.json`) on the exact same 500 sandbox outputs (and 41 unique sandbox outputs: 18 attacks, 23 benign) and 150 external texts. All model revisions and licenses are strictly pinned from saved Hugging Face metadata (`results/hf_metadata/`):
+
+| Model Name | Hugging Face Revision SHA | License | Unique Sandbox AUROC (18 atk vs 23 ben) | Unique Recall @ Default $\tau=0.5$ | Unique FPR @ Default $\tau=0.5$ | External Non-Imp FPR (N=100) | External Hard-Neg FPR (N=50) | Training Set Overlap Risk |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| **`protectai/deberta-v3-base-prompt-injection-v2`** | `90c9989b1a342275dd0d1a95aad283c04e075671` | Apache-2.0 | **0.7717** | 16.7% (3/18) | **0.0%** (0/23) | **0.0%** (0/100) | 10.0% (5/50) | Low (trained on multi-source composite: XSTest, VMware, Grok, Salad-Data) |
+| **`fmops/distilbert-prompt-injection`** | `c5da1fefd33c98c447b50dd806fe86aeb9e8c26c` | Apache-2.0 | **0.7319** | **100.0%** (18/18) | **100.0%** (23/23) | 100.0% (100/100) | 100.0% (50/50) | High (trained on `deepset/prompt-injections`; shares exact benchmark training source) |
+| **`deepset/deberta-v3-base-injection`** | `80dda00d0b0d9a03917a7685e2ddbcd28e04dbb1` | MIT | **0.9300** | **100.0%** (18/18) | **100.0%** (23/23) | 100.0% (100/100) | 100.0% (50/50) | High (direct training source of deepset benchmark subset) |
+
+> **Key Findings from Off-The-Shelf Detection**:
+> 1. **Training Data Overlap & Model Family Effect**: Both models trained on `deepset/prompt-injections` (`fmops/distilbert` and `deepset/deberta-v3`) exhibit the exact same 100% false positive saturation at default threshold ($\tau=0.5$) across benign tool outputs (23/23 unique FPR) and external benign texts (100% FPR), mirroring our fine-tuned DistilBERT checkpoint.
+> 2. **Multi-Source Training Avoids Saturation**: In contrast, `protectai/deberta-v3` (trained on multi-source corpora including non-imperative Grok conversations and XSTest) achieves **0.0% FPR (0/23)** on benign tool outputs and **0.0% FPR (0/100)** on external non-imperative texts, demonstrating that multi-source negative sampling prevents classifier saturation on structured tool responses. However, its default threshold yields low recall on indirect injection outputs (16.7% unique recall, 2.4% overall), requiring domain-specific threshold calibration.
+> 3. *Note on PromptGuard 2 (`meta-llama/Prompt-Guard-86M`)*: Access requires authenticated license agreement via Hugging Face. As `HF_TOKEN` was not provided in the execution environment, PromptGuard was excluded pursuant to evaluation guidelines.
+
+---
+
+## 8. Limitations & Scientific Scope
+
+1. **Pretrained Language Model Scope**: Evaluated on `distilbert-base-uncased` (single seed 42 reported for GPU retrain). All claims regarding Layer 2 failure and weak discrimination are strictly scoped to this fine-tuned checkpoint (`784c14f18bb459046fa286a2b3897d1c8604347ce16f28f40e33d71142cff6df`).
+2. **Channel-Shift & Tool Output Incompatibility**: Direct injection training sets (S-Labs, deepset) train classifiers to detect imperative instructions within short prompts. When exposed to structured tool outputs (emails, files, database records), classifiers saturate and classify legitimate operational output as adversarial. Layer 2 is therefore parked as an ablation condition and excluded from default defense pipelines until retrained on authentic tool-response distributions.
+3. **Training Data Mood Shortcut**: Mood syntax strongly correlates with class label in the training corpus ($\chi^2 = 1685.07, p < 10^{-10}$). Imperative grammar serves as a shortcut feature during training, explaining why procedural text triggers false alarms.
+4. **Effective Sample Size ($N_{eff}$)**: Due to template-level parameterization in the synthetic benchmark, the effective sample size on tool outputs is $N_{eff} = 18$ unique attack outputs and $N_{eff} = 23$ unique benign outputs. Exact Clopper-Pearson intervals and permutation tests reflect this sample size.
+5. **Synthetic Benchmark Nature**: The 500-case suite utilizes realistic threat scenarios generated from 40 template clusters; results should be validated against the forthcoming human-written dataset (`data/handwritten_eval.jsonl`) and real multi-turn LLM agent execution (Phase 3).

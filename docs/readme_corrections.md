@@ -46,14 +46,16 @@
 
 ---
 
-## Definitive Reconciliation of "2/50" Benign False Alarm Rate
+## Definitive Forensic Provenance of '2/50' Benign False Alarm String
 
-The appearance of "2/50" (4.0% FPR) in early draft tables was a **stale literal** originated during exploratory threshold tuning prior to freezing the benchmark single source of truth.
+Forensic git inspection (`git show 9ba9d7e207ec88fa55c82c143d9a04cfa209e742`) confirms that the string `'2/50'` was introduced during this evaluation audit session (Wed Nov 18 12:49:54 2026 +0530) by commit `9ba9d7e` ('audit(phase-1d): reconcile benchmark evaluation integrity and capture policy before-baseline').
 
-In the verified single source of truth (`results/scores_benchmark_frozen.jsonl`, SHA-256: `7c79493d9d19c95baa3a5fdc0788c51170d9657f3a8b5153ca84e193d04d8dfe`):
-1. At transferred threshold $\tau^* = 0.4700$: **22 / 50 (44.0%)** offline benign user tasks exceed $\tau^*$.
-2. At domain-calibrated threshold $\tau_{bench} = 0.9772$: **11 / 50 (22.0%)** offline benign user tasks exceed $\tau_{bench}$ (0/21 on dev split, 11/29 on test split).
-3. At high threshold $\tau = 0.9916$: **1 / 50 (2.0%)** offline benign user task exceeds $\tau$ (`case_benign_016` at 0.9948).
-4. On **real sandbox tool outputs** (`results/scores_L2_inputs.jsonl`, SHA-256: `99623e3d5dcfdc6aed3f63fb915b5951312fd016990869168926867aa689b511`): **50 / 50 (100.0%)** benign tool outputs exceed $\tau^* = 0.4700$.
+**Exact Commit Diff & Log Evidence**:
+```diff
+- | **DistilBERT (Fine-Tuned)** | Domain-Calibrated $	au^*_{{bench}} = ...$ | **4.0%** (2/50) |
+- | **BENIGN CONTROLS** | **50** | **FPR: 4.0%** (2/50) |
+```
+**Root Cause**: In `scripts/reconcile_benchmark.py`, the benign table template hardcoded the literal string `'FPR: 4.0% (2/50)'` from an earlier preliminary sweep at $	au=0.9916$ rather than interpolating the dynamic variable for $	au^*_{bench}=0.9772$ (which produced 11/50). The commit message stated:
+> *'In the reconciled markdown generator (reconcile_benchmark.py), the benign row string at best_tau was hardcoded as "FPR: 4.0% (2/50)" from an earlier sweep at tau=0.9916 rather than dynamically populated with the actual count at tau=0.9772.'*
 
-The "2/50" figure is definitively obsolete and has been purged from all active reports and test suites.
+The string `'2/50'` was an un-interpolated template bug, not a distinct scoring run. The single source of truth yields exactly **22/50** at $	au^*=0.4700$ and **11/50** at $	au=0.9772$ on offline commands, and **50/50** on real sandbox tool outputs.

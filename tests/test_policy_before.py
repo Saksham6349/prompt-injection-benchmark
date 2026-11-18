@@ -18,7 +18,7 @@ from src.types import DefenseConfig, ToolCall
 
 @pytest.fixture
 def current_policy() -> PolicyChecker:
-    return PolicyChecker(DefenseConfig())
+    return PolicyChecker(DefenseConfig(policy_mode="legacy"))
 
 
 def test_argument_hijack_recipient_currently_unblocked(current_policy: PolicyChecker) -> None:
