@@ -1,0 +1,14 @@
+{
+  "n_samples": 1752,
+  "max_absolute_difference": 3.159046173095703e-06,
+  "mean_absolute_difference": 1.9429464713929724e-08,
+  "label_mapping": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "tokenizer_casing": true,
+  "max_length": 512,
+  "truncation": true,
+  "softmax_index_used": 1,
+  "concordance_verdict": "PERFECT CONCORDANCE: Max absolute difference is 3.159046e-06 (mean 1.942946e-08), within standard floating-point rounding between GPU and CPU. Tokenizer casing, label mapping, max_length, and truncation are 100% identical."
+}

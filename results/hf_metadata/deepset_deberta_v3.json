@@ -1,0 +1,146 @@
+{
+  "_id": "6464977106cd98685a9cc5ef",
+  "id": "deepset/deberta-v3-base-injection",
+  "private": false,
+  "pipeline_tag": "text-classification",
+  "library_name": "transformers",
+  "tags": [
+    "transformers",
+    "pytorch",
+    "safetensors",
+    "deberta-v2",
+    "text-classification",
+    "generated_from_trainer",
+    "en",
+    "de",
+    "dataset:deepset/prompt-injections",
+    "base_model:microsoft/deberta-v3-base",
+    "base_model:finetune:microsoft/deberta-v3-base",
+    "license:mit",
+    "text-embeddings-inference",
+    "endpoints_compatible",
+    "region:us"
+  ],
+  "downloads": 2307,
+  "likes": 46,
+  "modelId": "deepset/deberta-v3-base-injection",
+  "author": "deepset",
+  "sha": "80dda00d0b0d9a03917a7685e2ddbcd28e04dbb1",
+  "lastModified": "2024-10-15T10:06:11.000Z",
+  "gated": false,
+  "disabled": false,
+  "mask_token": "[MASK]",
+  "widgetData": [
+    {
+      "text": "I like you. I love you"
+    }
+  ],
+  "model-index": [
+    {
+      "name": "deberta-v3-base-injection",
+      "results": []
+    }
+  ],
+  "config": {
+    "architectures": [
+      "DebertaV2ForSequenceClassification"
+    ],
+    "model_type": "deberta-v2",
+    "tokenizer_config": {
+      "bos_token": "[CLS]",
+      "cls_token": "[CLS]",
+      "eos_token": "[SEP]",
+      "mask_token": "[MASK]",
+      "pad_token": "[PAD]",
+      "sep_token": "[SEP]",
+      "unk_token": "[UNK]"
+    }
+  },
+  "cardData": {
+    "license": "mit",
+    "tags": [
+      "generated_from_trainer"
+    ],
+    "metrics": [
+      "accuracy"
+    ],
+    "base_model": "microsoft/deberta-v3-base",
+    "model-index": [
+      {
+        "name": "deberta-v3-base-injection",
+        "results": []
+      }
+    ],
+    "datasets": [
+      "deepset/prompt-injections"
+    ],
+    "language": [
+      "en",
+      "de"
+    ]
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForSequenceClassification",
+    "pipeline_tag": "text-classification",
+    "processor": "AutoTokenizer"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "added_tokens.json"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "gitattributes.txt"
+    },
+    {
+      "rfilename": "gitignore.txt"
+    },
+    {
+      "rfilename": "model.safetensors"
+    },
+    {
+      "rfilename": "pytorch_model.bin"
+    },
+    {
+      "rfilename": "special_tokens_map.json"
+    },
+    {
+      "rfilename": "spm.model"
+    },
+    {
+      "rfilename": "tokenizer.json"
+    },
+    {
+      "rfilename": "tokenizer_config.json"
+    },
+    {
+      "rfilename": "training_args.bin"
+    }
+  ],
+  "spaces": [
+    "Baad/Defensive-Guardrail-System-ai",
+    "Swati425/LLM_Guardrail",
+    "sankarganesh232005/prompt-guard",
+    "Nomearod/agentbench",
+    "thhepu/malicious-email-scorer",
+    "joseherrera1988/prompt-injection-detection-system"
+  ],
+  "createdAt": "2023-05-17T08:59:29.000Z",
+  "safetensors": {
+    "parameters": {
+      "I64": 512,
+      "F32": 184423682
+    },
+    "total": 184424194
+  },
+  "inference": "warm",
+  "usedStorage": 1477960812
+}

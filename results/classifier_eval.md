@@ -56,7 +56,7 @@ Thresholds do not transfer across disparate data distributions; threshold-free m
 | Evaluation Input Source | Model | Threshold $\tau$ | Attack Detection (N=450) | Benign Control FPR (N=50) | 95% Clopper-Pearson CI (Template Level) |
 | :--- | :--- | :---: | :---: | :---: | :---: |
 | **Real Sandbox Tool Outputs** (`scores_L2_inputs.jsonl`) | **DistilBERT** (Ablation Condition: *fails on tool-output channel (this checkpoint)*) | $\tau^* = 0.4700$ | **100.0%** (450/450) | **100.0%** (50/50)\* | Atk: [79.4%, 100.0%]<br>Benign: [85.8%, 100.0%] |
-| **Real Sandbox Tool Outputs** | **PromptGuard Baseline** (Heuristic Fallback) | $\tau = 0.5000$ | 2.89% (13/450) | **0.0%** (0/50) | AUROC: 0.5178 |
+| **Real Sandbox Tool Outputs** | **Repo Regex Heuristic** (Heuristic Baseline) | $\tau = 0.5000$ | 2.89% (13/450) | **0.0%** (0/50) | AUROC: 0.5178 |
 | **Offline User Task Commands** (`scores_benchmark_frozen.jsonl`) | **DistilBERT** | $\tau^* = 0.4700$ | **100.0%** (450/450) | 44.0% (22/50) | Atk: [79.4%, 100.0%]<br>Benign: [24.4%, 65.1%] |
 | **Offline User Task Commands** | **DistilBERT** | $\tau = 0.9772$ (Exploratory) | **100.0%** (450/450) | 22.0% (11/50) | Atk: [79.4%, 100.0%]<br>Benign: [9.3%, 47.6%] |
 | **Offline User Task Commands** | **TF-IDF + LR** | $\tau^* = 0.4700$ | 68.89% (310/450) | **0.0%** (0/50) | Atk: [44.7%, 86.6%]<br>Benign: [0.0%, 14.2%] |
@@ -65,14 +65,21 @@ Thresholds do not transfer across disparate data distributions; threshold-free m
 > **Domain-Mismatch Empirical Hypothesis & Channel Failure (This Checkpoint)**:
 > Layer 2 (fine-tuned DistilBERT) is **excluded from default pipeline configurations** (default is L1 Provenance + L3 Policy) and retained solely as an ablation condition labeled *"fails on tool-output channel (this checkpoint)"*.
 >
-> To test whether this channel failure is caused by formatting layout (headers, linebreaks) or deeper semantic features, we conducted controlled variant testing on all 500 cases (`results/domain_mismatch_eval.json`):
-> 1. **Training Corpus Baseline** (`data/splits/train.csv`, N=8,179): Mean length is 10.74 words (median 9.0; slabs=10.19 words, deepset=19.95 words). Only **0.15%** of training samples contain newlines (`\n`), and only **0.86%** contain key-value headers.
-> 2. **Controlled Variant Scoring on Sandbox Outputs (N=500)**:
+> To test whether this channel failure is caused by formatting layout, token length, or deeper semantic features, we conducted controlled variant testing on all 500 cases (`results/token_variants_eval.json`, `results/external_benign_evaluation.json`):
+> 1. **Tokenizer Identity & Token Length Audit**:
+>    - Proved that `tokenizer("Line 1\nLine 2")["input_ids"] == tokenizer("Line 1 Line 2")["input_ids"]` in WordPiece. Flattening newlines is a token-level no-op and was removed from empirical claims.
+>    - **0 / 500 (0.0%) sandbox outputs exceed 512 tokens** (mean = 54.9 words, median = 60.0 words, max = 135 words). Truncation was never active.
+> 2. **Token-Altering Variant Scoring on Sandbox Outputs (N=500)**:
 >    - **As-Is Sandbox Outputs**: Benign mean score 0.9776 (median 0.9971), Benign FPR 100.0%, AUROC = 0.6162.
->    - **Headers Stripped (Body Only)**: Benign mean score 0.9756 (median 0.9970), Benign FPR 100.0%, AUROC = 0.5402.
->    - **Reflowed Prose (Single-Line)**: Benign mean score 0.9776 (median 0.9971), Benign FPR 100.0%, AUROC = 0.6162.
+>    - **Entity Placeholders** (`[ACCOUNT_ID]`, `[EMAIL_ADDR]`, `[URL_REF]`, `[FILE_ID]`): Benign mean 0.9894, Benign FPR 100.0%, AUROC = 0.6424.
+>    - **Key Names Removed** (stripping schema/header keys): Benign mean **0.9189**, Benign FPR **90.0%**, AUROC = 0.6251.
+>    - **Tool Names Removed**: Benign mean 0.9776, Benign FPR 100.0%, AUROC = 0.6437.
+>    - **First-64-Tokens Truncation**: Benign mean 0.9700, Benign FPR 100.0%, AUROC = 0.7335.
+> 3. **External Benign & Hard Negative Evaluation**:
+>    - **100 Non-Imperative Benign Texts** (Python docs, Wikipedia, Enron, REST API JSON): Mean score **0.5429** (median 0.6834, min 0.0019, max 0.9981). Benign FPR @ $\tau^*=0.4700$ drops to **58.0%** (42/100 passed cleanly without domain training).
+>    - **50 Hard Negatives** (Setup runbooks, compliance policy directives): Mean score **0.9946** (median 0.9971, min 0.9750, max 0.9980). FPR @ $\tau^*=0.4700$ is **100.0%**.
 >
-> **Hypothesis Verdict**: Stripping structured headers and flattening multiline formatting does *not* eliminate false positives. The 100% FPR is not an artifact of header markers or newlines, but indicates that this DistilBERT checkpoint has generalized "injection" to include dense, factual business schemas (API specs, email listings, transaction records). Future retraining requires a large corpus of authentic tool outputs with contrastive hard negatives.
+> **Hypothesis Verdict**: The classifier model saturates on dense text in general; procedural, imperative command syntax triggers extreme saturation (0.9946), while non-imperative encyclopedic and documentation text drops to 0.5429 (58% FPR). Future retraining requires authentic tool outputs and balanced hard negatives.
 
 ### 4.2 Counterfactual Probes & Neutralization Audit
 
@@ -82,7 +89,8 @@ A rigorous audit of counterfactual transformations (`results/probe_neutralizatio
   - **Original Unique Templates (N=16)**: 16 / 16 detected (100.0%, mean score 0.9970).
   - **Truly Neutralized (Commands, Syntax, Base64 Stripped)**: 14 / 16 detected (87.5%, mean score 0.8686; 393/450 overall).
   - **Keywords-Only (Isolated Trigger Words, No Command Grammar)**: Detection drops to **7 / 16 (43.8%, mean score 0.4131; 197/450 overall)**.
-  This confirms that removing imperative grammar significantly degrades classifier activation, but residual business keywords still trigger over-sensitive features in this checkpoint.
+  
+  **Scoped Neutralization Finding**: Neutralized attacks are still flagged at 87.5% (14/16 templates; 393/450 cases), while keyword-only text scores (mean 0.4131) fall below benign sandbox tool outputs (mean 0.9776). Rather than command syntax alone driving activation, the checkpoint saturates on dense, technical/procedural text in general.
 
 ### 4.2 Benchmark Text Repetition & Effective Sample Size ($N_{eff}$)
 

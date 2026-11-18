@@ -1,7 +1,9 @@
 {
   "total_populated_cells": 60,
-  "theoretical_cells": 160,
-  "populated_fraction": 0.375,
+  "theoretical_cells": 112,
+  "populated_fraction": 0.5357142857142857,
+  "empty_cells": 52,
+  "confounding_warning": "Technique effects are heavily confounded with target actions and channels due to incomplete crossover (e.g. encoded_payload only pairs with send_email; payload_splitting only pairs with delete_file).",
   "techniques": [
     {
       "technique": "context_manipulation",

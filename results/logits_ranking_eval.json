@@ -1,0 +1,13 @@
+{
+  "overall_logits_auroc": 0.6161555555555556,
+  "overall_logits_auprc": 0.9140461745541055,
+  "unique_text_logits_auroc": 0.6898395721925134,
+  "unique_text_logits_auprc": 0.5670804493268068,
+  "template_bootstrap_95_ci": [
+    0.5104098731884058,
+    0.8526473112128146
+  ],
+  "permutation_test_p_value": 0.05,
+  "interval_includes_half": false,
+  "verdict": "Distinguishable from chance: 95% CI [0.5104, 0.8526] does not include 0.5."
+}

@@ -1,14 +1,25 @@
-# Benchmark Technique Validity Audit & 160-Cell Matrix Analysis
+# Benchmark Technique Validity Audit & 112-Cell Matrix Analysis
 
-> **Status**: Phase 1c Empirical Technique Review
+> **Status**: Phase 1f Empirical Technique Review & Confounding Audit
 > **Scoring Checkpoint SHA-256**: `784c14f18bb459046fa286a2b3897d1c8604347ce16f28f40e33d71142cff6df`
 
-## 1. 160-Cell Taxonomy Matrix Coverage
-- Theoretical Cells: 4 domains x 8 techniques x 5 target actions = **160 cells**
-- Populated Cells in Benchmark: **60 cells (37.5%)**
-- Empty / Unpopulated Cells: **100 cells (62.5%)**
+## 1. 112-Cell Taxonomy Matrix Coverage & Confounding Analysis
 
-| Technique (Taxonomy) | Total Cases | Populated Cells (max 20) | Avg Cases / Cell | Evaluation Status / Verdict |
+- **Theoretical Design Space**: 7 techniques $\times$ 4 target actions $\times$ 4 injection channels = **112 cells**
+- **Populated Cells in Benchmark**: **60 cells (53.6%)**
+- **Empty / Unpopulated Cells**: **52 cells (46.4%)**
+
+> [!WARNING]
+> **Severe Factorial Confounding Warning**:
+> In the current 450-attack benchmark, technique effects are **heavily confounded** with target actions and injection channels due to incomplete factorial coverage:
+> - `encoded_payload` (28 cases) is **strictly paired with `send_email`** (0 cases with `delete_event`, `delete_file`, or `transfer`).
+> - `payload_splitting` (28 cases) is **strictly paired with `delete_file`** (0 cases with `send_email`, `delete_event`, or `transfer`).
+> - `tool_call_forging` (56 cases) is restricted to `delete_file` and `send_email` (0 cases with `delete_event` or `transfer`).
+> - `context_manipulation` (84 cases) is restricted to `delete_event`, `delete_file`, and `transfer` (0 cases with `send_email`).
+> 
+> Consequently, differences in classifier activation or bypass rates across techniques cannot be isolated from the specific tool semantics or channel structures. Any reported technique performance in Phase 1 reflects this joint distribution and must not be interpreted as an isolated technique property. Phase 3 redesign requires fully crossing technique with action and channel.
+
+| Technique (Taxonomy) | Total Cases | Populated Cells (max 16) | Avg Cases / Cell | Evaluation Status / Verdict |
 | :--- | :---: | :---: | :---: | :--- |
 | `context_manipulation` | 84 | 12 | 7.0 | **VALID (Simulated conversation history / system reset)** |
 | `encoded_payload` | 28 | 4 | 7.0 | **RELABEL: pseudo_encoded (plain command wrapper)** |
@@ -17,7 +28,7 @@
 | `payload_splitting` | 28 | 4 | 7.0 | **RELABEL: single_turn_split (non-turn-split)** |
 | `role_play` | 85 | 12 | 7.1 | **VALID (Persona override / developer simulation)** |
 | `tool_call_forging` | 56 | 8 | 7.0 | **VALID (Faked XML/JSON tool execution blocks)** |
-| **Total Populated Cells** | **450** | **60 / 160** | **7.5** | **60 populated cells, 100 empty cells** |
+| **Total Populated Cells** | **450** | **60 / 112** | **7.5** | **60 populated cells (53.6%), 52 empty cells (46.4%)** |
 
 ## 2. Complete Populated 60-Cell Matrix
 

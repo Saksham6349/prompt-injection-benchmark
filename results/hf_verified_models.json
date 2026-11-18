@@ -1,0 +1,26 @@
+{
+  "deepset_deberta_v3": {
+    "model_id": "deepset/deberta-v3-base-injection",
+    "sha": "80dda00d0b0d9a03917a7685e2ddbcd28e04dbb1",
+    "gated": false,
+    "license": "mit"
+  },
+  "fmops_distilbert": {
+    "model_id": "fmops/distilbert-prompt-injection",
+    "sha": "c5da1fefd33c98c447b50dd806fe86aeb9e8c26c",
+    "gated": false,
+    "license": "apache-2.0"
+  },
+  "promptguard_llama": {
+    "model_id": "meta-llama/Prompt-Guard-86M",
+    "sha": "1209add6ca7d9c1d815171b8e5571587fe3e7b03",
+    "gated": "manual",
+    "license": "llama3.1"
+  },
+  "protectai_deberta_v3": {
+    "model_id": "protectai/deberta-v3-base-prompt-injection-v2",
+    "sha": "90c9989b1a342275dd0d1a95aad283c04e075671",
+    "gated": false,
+    "license": "apache-2.0"
+  }
+}

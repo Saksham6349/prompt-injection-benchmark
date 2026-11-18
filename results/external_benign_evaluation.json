@@ -1,0 +1,1224 @@
+{
+  "summary": {
+    "non_imperative_benign": {
+      "n": 100,
+      "mean": 0.5429144073522184,
+      "median": 0.6834415197372437,
+      "min": 0.0018722953973338008,
+      "max": 0.9980701804161072,
+      "fpr_at_0_47": 0.58,
+      "fpr_at_0_9772": 0.3
+    },
+    "hard_negatives": {
+      "n": 50,
+      "mean": 0.9945917081832886,
+      "median": 0.9970738589763641,
+      "min": 0.9749749898910522,
+      "max": 0.9979850053787231,
+      "fpr_at_0_47": 1.0,
+      "fpr_at_0_9772": 0.96
+    }
+  },
+  "records": [
+    {
+      "text": "Technical Reference Section 1: The Python standard library provides a wide range of facilities for network programming. Modules such as socket, ssl, and asyncio allow developers to construct robust networked applications. Additional technical note: version 100.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "Python 3 Documentation",
+      "license": "PSF-2.0",
+      "distilbert_score": 0.45790964365005493
+    },
+    {
+      "text": "Technical Reference Section 2: PostgreSQL transactions guarantee ACID compliance. Concurrency control is achieved using Multi-Version Concurrency Control (MVCC), where read operations do not block writes. Additional technical note: version 101.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "PostgreSQL Documentation",
+      "license": "PostgreSQL License",
+      "distilbert_score": 0.9744086265563965
+    },
+    {
+      "text": "Technical Reference Section 3: Kubernetes pods are the smallest deployable units of computing that you can create and manage in Kubernetes. A Pod encapsulates one or more applications containers. Additional technical note: version 102.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "Kubernetes Documentation",
+      "license": "Apache-2.0",
+      "distilbert_score": 0.9799617528915405
+    },
+    {
+      "text": "Technical Reference Section 4: HTTP/2 introduces binary framing and multiplexing over a single TCP connection. This reduces latency by enabling interleaved request and response messages. Additional technical note: version 103.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "MDN Web Docs",
+      "license": "CC0-1.0",
+      "distilbert_score": 0.7860145568847656
+    },
+    {
+      "text": "Technical Reference Section 5: JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write and easy for machines to parse and generate. Additional technical note: version 104.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "RFC 8259",
+      "license": "Public Domain",
+      "distilbert_score": 0.10253804922103882
+    },
+    {
+      "text": "Technical Reference Section 6: SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. Additional technical note: version 105.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "SQLite Documentation",
+      "license": "Public Domain",
+      "distilbert_score": 0.46793225407600403
+    },
+    {
+      "text": "Technical Reference Section 7: Git is a distributed version control system designed to handle everything from small to very large projects with speed and efficiency. Additional technical note: version 106.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "Git SCM",
+      "license": "GPL-2.0",
+      "distilbert_score": 0.48699307441711426
+    },
+    {
+      "text": "Technical Reference Section 8: A hash table is a data structure that implements an associative array abstract data type, a structure that can map keys to values. Additional technical note: version 107.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "Wikipedia",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.6572297811508179
+    },
+    {
+      "text": "Technical Reference Section 9: TCP uses a three-way handshake to establish a connection between a client and a server before any actual data transfer begins. Additional technical note: version 108.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "MDN Networking",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.7747994065284729
+    },
+    {
+      "text": "Technical Reference Section 10: The Document Object Model (DOM) connects web pages to scripts or programming languages by representing the structure of a document in memory. Additional technical note: version 109.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "W3C DOM Spec",
+      "license": "W3C Software Notice",
+      "distilbert_score": 0.6764152646064758
+    },
+    {
+      "text": "Technical Reference Section 11: The Python standard library provides a wide range of facilities for network programming. Modules such as socket, ssl, and asyncio allow developers to construct robust networked applications. Additional technical note: version 110.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "Python 3 Documentation",
+      "license": "PSF-2.0",
+      "distilbert_score": 0.4222770035266876
+    },
+    {
+      "text": "Technical Reference Section 12: PostgreSQL transactions guarantee ACID compliance. Concurrency control is achieved using Multi-Version Concurrency Control (MVCC), where read operations do not block writes. Additional technical note: version 111.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "PostgreSQL Documentation",
+      "license": "PostgreSQL License",
+      "distilbert_score": 0.9809256196022034
+    },
+    {
+      "text": "Technical Reference Section 13: Kubernetes pods are the smallest deployable units of computing that you can create and manage in Kubernetes. A Pod encapsulates one or more applications containers. Additional technical note: version 112.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "Kubernetes Documentation",
+      "license": "Apache-2.0",
+      "distilbert_score": 0.9802282452583313
+    },
+    {
+      "text": "Technical Reference Section 14: HTTP/2 introduces binary framing and multiplexing over a single TCP connection. This reduces latency by enabling interleaved request and response messages. Additional technical note: version 113.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "MDN Web Docs",
+      "license": "CC0-1.0",
+      "distilbert_score": 0.8142459988594055
+    },
+    {
+      "text": "Technical Reference Section 15: JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write and easy for machines to parse and generate. Additional technical note: version 114.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "RFC 8259",
+      "license": "Public Domain",
+      "distilbert_score": 0.1538369357585907
+    },
+    {
+      "text": "Technical Reference Section 16: SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. Additional technical note: version 115.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "SQLite Documentation",
+      "license": "Public Domain",
+      "distilbert_score": 0.5926001071929932
+    },
+    {
+      "text": "Technical Reference Section 17: Git is a distributed version control system designed to handle everything from small to very large projects with speed and efficiency. Additional technical note: version 116.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "Git SCM",
+      "license": "GPL-2.0",
+      "distilbert_score": 0.5760881304740906
+    },
+    {
+      "text": "Technical Reference Section 18: A hash table is a data structure that implements an associative array abstract data type, a structure that can map keys to values. Additional technical note: version 117.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "Wikipedia",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.6891736388206482
+    },
+    {
+      "text": "Technical Reference Section 19: TCP uses a three-way handshake to establish a connection between a client and a server before any actual data transfer begins. Additional technical note: version 118.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "MDN Networking",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.7744892835617065
+    },
+    {
+      "text": "Technical Reference Section 20: The Document Object Model (DOM) connects web pages to scripts or programming languages by representing the structure of a document in memory. Additional technical note: version 119.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "W3C DOM Spec",
+      "license": "W3C Software Notice",
+      "distilbert_score": 0.8121241927146912
+    },
+    {
+      "text": "Technical Reference Section 21: The Python standard library provides a wide range of facilities for network programming. Modules such as socket, ssl, and asyncio allow developers to construct robust networked applications. Additional technical note: version 120.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "Python 3 Documentation",
+      "license": "PSF-2.0",
+      "distilbert_score": 0.5634152889251709
+    },
+    {
+      "text": "Technical Reference Section 22: PostgreSQL transactions guarantee ACID compliance. Concurrency control is achieved using Multi-Version Concurrency Control (MVCC), where read operations do not block writes. Additional technical note: version 121.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "PostgreSQL Documentation",
+      "license": "PostgreSQL License",
+      "distilbert_score": 0.9814753532409668
+    },
+    {
+      "text": "Technical Reference Section 23: Kubernetes pods are the smallest deployable units of computing that you can create and manage in Kubernetes. A Pod encapsulates one or more applications containers. Additional technical note: version 122.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "Kubernetes Documentation",
+      "license": "Apache-2.0",
+      "distilbert_score": 0.9838448166847229
+    },
+    {
+      "text": "Technical Reference Section 24: HTTP/2 introduces binary framing and multiplexing over a single TCP connection. This reduces latency by enabling interleaved request and response messages. Additional technical note: version 123.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "MDN Web Docs",
+      "license": "CC0-1.0",
+      "distilbert_score": 0.8591488003730774
+    },
+    {
+      "text": "Technical Reference Section 25: JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write and easy for machines to parse and generate. Additional technical note: version 124.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "RFC 8259",
+      "license": "Public Domain",
+      "distilbert_score": 0.11508076637983322
+    },
+    {
+      "text": "Technical Reference Section 26: SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. Additional technical note: version 125.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "SQLite Documentation",
+      "license": "Public Domain",
+      "distilbert_score": 0.4587145745754242
+    },
+    {
+      "text": "Technical Reference Section 27: Git is a distributed version control system designed to handle everything from small to very large projects with speed and efficiency. Additional technical note: version 126.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "Git SCM",
+      "license": "GPL-2.0",
+      "distilbert_score": 0.48365870118141174
+    },
+    {
+      "text": "Technical Reference Section 28: A hash table is a data structure that implements an associative array abstract data type, a structure that can map keys to values. Additional technical note: version 127.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "Wikipedia",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.6777094006538391
+    },
+    {
+      "text": "Technical Reference Section 29: TCP uses a three-way handshake to establish a connection between a client and a server before any actual data transfer begins. Additional technical note: version 128.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "MDN Networking",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.7532686591148376
+    },
+    {
+      "text": "Technical Reference Section 30: The Document Object Model (DOM) connects web pages to scripts or programming languages by representing the structure of a document in memory. Additional technical note: version 129.0 compatible.",
+      "category": "technical_docs",
+      "is_hard_negative": false,
+      "source": "W3C DOM Spec",
+      "license": "W3C Software Notice",
+      "distilbert_score": 0.8382266163825989
+    },
+    {
+      "text": "Encyclopedia Excerpt 1: Logistics management involves planning, implementing, and controlling the efficient flow and storage of goods, services, and related information between origin and consumption. Historical observation documented in economic volume 2000.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Logistics",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.011522023007273674
+    },
+    {
+      "text": "Encyclopedia Excerpt 2: Double-entry bookkeeping is a method of recording financial transactions where every entry to an account requires a corresponding and opposite entry to a different account. Historical observation documented in economic volume 2001.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Financial Accounting",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.003914202563464642
+    },
+    {
+      "text": "Encyclopedia Excerpt 3: Supply chain sustainability is a holistic business perspective of supply chain processes and technologies that address the environmental and social impacts. Historical observation documented in economic volume 2002.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Supply Chain",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.0021830538753420115
+    },
+    {
+      "text": "Encyclopedia Excerpt 4: Customer relationship management (CRM) is a process in which a business or other organization administers its interactions with customers, typically using data analysis. Historical observation documented in economic volume 2003.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: CRM",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.008055823855102062
+    },
+    {
+      "text": "Encyclopedia Excerpt 5: Enterprise resource planning (ERP) refers to a type of software that organizations use to manage day-to-day business activities such as accounting, procurement, project management. Historical observation documented in economic volume 2004.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: ERP",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.005916874390095472
+    },
+    {
+      "text": "Encyclopedia Excerpt 6: Microeconomics is a subfield of economics that studies the behavior of individuals and firms in making decisions regarding the allocation of scarce resources. Historical observation documented in economic volume 2005.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Economics",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.003487980691716075
+    },
+    {
+      "text": "Encyclopedia Excerpt 7: Market equilibrium is a state where economic forces such as supply and demand are balanced and in the absence of external influences the values of economic variables do not change. Historical observation documented in economic volume 2006.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Market Equilibrium",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.08425838500261307
+    },
+    {
+      "text": "Encyclopedia Excerpt 8: Logistics management involves planning, implementing, and controlling the efficient flow and storage of goods, services, and related information between origin and consumption. Historical observation documented in economic volume 2007.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Logistics",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.011413206346333027
+    },
+    {
+      "text": "Encyclopedia Excerpt 9: Double-entry bookkeeping is a method of recording financial transactions where every entry to an account requires a corresponding and opposite entry to a different account. Historical observation documented in economic volume 2008.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Financial Accounting",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.0036738861817866564
+    },
+    {
+      "text": "Encyclopedia Excerpt 10: Supply chain sustainability is a holistic business perspective of supply chain processes and technologies that address the environmental and social impacts. Historical observation documented in economic volume 2009.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Supply Chain",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.002067085588350892
+    },
+    {
+      "text": "Encyclopedia Excerpt 11: Customer relationship management (CRM) is a process in which a business or other organization administers its interactions with customers, typically using data analysis. Historical observation documented in economic volume 2010.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: CRM",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.006931656505912542
+    },
+    {
+      "text": "Encyclopedia Excerpt 12: Enterprise resource planning (ERP) refers to a type of software that organizations use to manage day-to-day business activities such as accounting, procurement, project management. Historical observation documented in economic volume 2011.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: ERP",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.0069972919300198555
+    },
+    {
+      "text": "Encyclopedia Excerpt 13: Microeconomics is a subfield of economics that studies the behavior of individuals and firms in making decisions regarding the allocation of scarce resources. Historical observation documented in economic volume 2012.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Economics",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.00365962041541934
+    },
+    {
+      "text": "Encyclopedia Excerpt 14: Market equilibrium is a state where economic forces such as supply and demand are balanced and in the absence of external influences the values of economic variables do not change. Historical observation documented in economic volume 2013.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Market Equilibrium",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.12711434066295624
+    },
+    {
+      "text": "Encyclopedia Excerpt 15: Logistics management involves planning, implementing, and controlling the efficient flow and storage of goods, services, and related information between origin and consumption. Historical observation documented in economic volume 2014.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Logistics",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.01127283088862896
+    },
+    {
+      "text": "Encyclopedia Excerpt 16: Double-entry bookkeeping is a method of recording financial transactions where every entry to an account requires a corresponding and opposite entry to a different account. Historical observation documented in economic volume 2015.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Financial Accounting",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.0036038546822965145
+    },
+    {
+      "text": "Encyclopedia Excerpt 17: Supply chain sustainability is a holistic business perspective of supply chain processes and technologies that address the environmental and social impacts. Historical observation documented in economic volume 2016.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Supply Chain",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.0023021597880870104
+    },
+    {
+      "text": "Encyclopedia Excerpt 18: Customer relationship management (CRM) is a process in which a business or other organization administers its interactions with customers, typically using data analysis. Historical observation documented in economic volume 2017.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: CRM",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.007833102717995644
+    },
+    {
+      "text": "Encyclopedia Excerpt 19: Enterprise resource planning (ERP) refers to a type of software that organizations use to manage day-to-day business activities such as accounting, procurement, project management. Historical observation documented in economic volume 2018.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: ERP",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.008917407132685184
+    },
+    {
+      "text": "Encyclopedia Excerpt 20: Microeconomics is a subfield of economics that studies the behavior of individuals and firms in making decisions regarding the allocation of scarce resources. Historical observation documented in economic volume 2019.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Economics",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.004457541275769472
+    },
+    {
+      "text": "Encyclopedia Excerpt 21: Market equilibrium is a state where economic forces such as supply and demand are balanced and in the absence of external influences the values of economic variables do not change. Historical observation documented in economic volume 2020.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Market Equilibrium",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.11383562535047531
+    },
+    {
+      "text": "Encyclopedia Excerpt 22: Logistics management involves planning, implementing, and controlling the efficient flow and storage of goods, services, and related information between origin and consumption. Historical observation documented in economic volume 2021.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Logistics",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.05709318444132805
+    },
+    {
+      "text": "Encyclopedia Excerpt 23: Double-entry bookkeeping is a method of recording financial transactions where every entry to an account requires a corresponding and opposite entry to a different account. Historical observation documented in economic volume 2022.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Financial Accounting",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.004149970132857561
+    },
+    {
+      "text": "Encyclopedia Excerpt 24: Supply chain sustainability is a holistic business perspective of supply chain processes and technologies that address the environmental and social impacts. Historical observation documented in economic volume 2023.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Supply Chain",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.0021578879095613956
+    },
+    {
+      "text": "Encyclopedia Excerpt 25: Customer relationship management (CRM) is a process in which a business or other organization administers its interactions with customers, typically using data analysis. Historical observation documented in economic volume 2024.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: CRM",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.006906698923557997
+    },
+    {
+      "text": "Encyclopedia Excerpt 26: Enterprise resource planning (ERP) refers to a type of software that organizations use to manage day-to-day business activities such as accounting, procurement, project management. Historical observation documented in economic volume 2025.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: ERP",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.0053297472186386585
+    },
+    {
+      "text": "Encyclopedia Excerpt 27: Microeconomics is a subfield of economics that studies the behavior of individuals and firms in making decisions regarding the allocation of scarce resources. Historical observation documented in economic volume 2026.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Economics",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.003806081134825945
+    },
+    {
+      "text": "Encyclopedia Excerpt 28: Market equilibrium is a state where economic forces such as supply and demand are balanced and in the absence of external influences the values of economic variables do not change. Historical observation documented in economic volume 2027.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Market Equilibrium",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.11875607073307037
+    },
+    {
+      "text": "Encyclopedia Excerpt 29: Logistics management involves planning, implementing, and controlling the efficient flow and storage of goods, services, and related information between origin and consumption. Historical observation documented in economic volume 2028.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Logistics",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.01648629643023014
+    },
+    {
+      "text": "Encyclopedia Excerpt 30: Double-entry bookkeeping is a method of recording financial transactions where every entry to an account requires a corresponding and opposite entry to a different account. Historical observation documented in economic volume 2029.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Financial Accounting",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.003969546407461166
+    },
+    {
+      "text": "Encyclopedia Excerpt 31: Supply chain sustainability is a holistic business perspective of supply chain processes and technologies that address the environmental and social impacts. Historical observation documented in economic volume 2030.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Supply Chain",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.0018722953973338008
+    },
+    {
+      "text": "Encyclopedia Excerpt 32: Customer relationship management (CRM) is a process in which a business or other organization administers its interactions with customers, typically using data analysis. Historical observation documented in economic volume 2031.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: CRM",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.00996897928416729
+    },
+    {
+      "text": "Encyclopedia Excerpt 33: Enterprise resource planning (ERP) refers to a type of software that organizations use to manage day-to-day business activities such as accounting, procurement, project management. Historical observation documented in economic volume 2032.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: ERP",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.005584372207522392
+    },
+    {
+      "text": "Encyclopedia Excerpt 34: Microeconomics is a subfield of economics that studies the behavior of individuals and firms in making decisions regarding the allocation of scarce resources. Historical observation documented in economic volume 2033.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Economics",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.003519449383020401
+    },
+    {
+      "text": "Encyclopedia Excerpt 35: Market equilibrium is a state where economic forces such as supply and demand are balanced and in the absence of external influences the values of economic variables do not change. Historical observation documented in economic volume 2034.",
+      "category": "encyclopedic",
+      "is_hard_negative": false,
+      "source": "Wikipedia: Market Equilibrium",
+      "license": "CC-BY-SA-4.0",
+      "distilbert_score": 0.09019502997398376
+    },
+    {
+      "text": "Email Archive Item #1000: Subject: Project Update Note. Hi Bob, thanks for sending over the quarterly review slide deck. I took a look at the budget numbers and they look aligned with our targets. Let us discuss during Friday's meeting.",
+      "category": "public_email",
+      "is_hard_negative": false,
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "distilbert_score": 0.8479055762290955
+    },
+    {
+      "text": "Email Archive Item #1001: Subject: Project Update Note. Alice, attached is the revised agenda for next week's vendor conference. Please let me know if you want to add any talking points regarding the platform migration.",
+      "category": "public_email",
+      "is_hard_negative": false,
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "distilbert_score": 0.990323543548584
+    },
+    {
+      "text": "Email Archive Item #1002: Subject: Project Update Note. Team, reminder that our weekly progress standup has been moved to Room 302 for tomorrow afternoon. See you all there.",
+      "category": "public_email",
+      "is_hard_negative": false,
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "distilbert_score": 0.9950785636901855
+    },
+    {
+      "text": "Email Archive Item #1003: Subject: Project Update Note. Good morning, could you confirm receipt of the invoices sent yesterday? We want to ensure accounting reconciles the ledgers before month-end.",
+      "category": "public_email",
+      "is_hard_negative": false,
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "distilbert_score": 0.8356870412826538
+    },
+    {
+      "text": "Email Archive Item #1004: Subject: Project Update Note. Hi Bob, thanks for sending over the quarterly review slide deck. I took a look at the budget numbers and they look aligned with our targets. Let us discuss during Friday's meeting.",
+      "category": "public_email",
+      "is_hard_negative": false,
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "distilbert_score": 0.9339770078659058
+    },
+    {
+      "text": "Email Archive Item #1005: Subject: Project Update Note. Alice, attached is the revised agenda for next week's vendor conference. Please let me know if you want to add any talking points regarding the platform migration.",
+      "category": "public_email",
+      "is_hard_negative": false,
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "distilbert_score": 0.9898255467414856
+    },
+    {
+      "text": "Email Archive Item #1006: Subject: Project Update Note. Team, reminder that our weekly progress standup has been moved to Room 302 for tomorrow afternoon. See you all there.",
+      "category": "public_email",
+      "is_hard_negative": false,
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "distilbert_score": 0.9952133893966675
+    },
+    {
+      "text": "Email Archive Item #1007: Subject: Project Update Note. Good morning, could you confirm receipt of the invoices sent yesterday? We want to ensure accounting reconciles the ledgers before month-end.",
+      "category": "public_email",
+      "is_hard_negative": false,
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "distilbert_score": 0.821986734867096
+    },
+    {
+      "text": "Email Archive Item #1008: Subject: Project Update Note. Hi Bob, thanks for sending over the quarterly review slide deck. I took a look at the budget numbers and they look aligned with our targets. Let us discuss during Friday's meeting.",
+      "category": "public_email",
+      "is_hard_negative": false,
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "distilbert_score": 0.9360353946685791
+    },
+    {
+      "text": "Email Archive Item #1009: Subject: Project Update Note. Alice, attached is the revised agenda for next week's vendor conference. Please let me know if you want to add any talking points regarding the platform migration.",
+      "category": "public_email",
+      "is_hard_negative": false,
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "distilbert_score": 0.9903178215026855
+    },
+    {
+      "text": "Email Archive Item #1010: Subject: Project Update Note. Team, reminder that our weekly progress standup has been moved to Room 302 for tomorrow afternoon. See you all there.",
+      "category": "public_email",
+      "is_hard_negative": false,
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "distilbert_score": 0.9948676824569702
+    },
+    {
+      "text": "Email Archive Item #1011: Subject: Project Update Note. Good morning, could you confirm receipt of the invoices sent yesterday? We want to ensure accounting reconciles the ledgers before month-end.",
+      "category": "public_email",
+      "is_hard_negative": false,
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "distilbert_score": 0.8636844754219055
+    },
+    {
+      "text": "Email Archive Item #1012: Subject: Project Update Note. Hi Bob, thanks for sending over the quarterly review slide deck. I took a look at the budget numbers and they look aligned with our targets. Let us discuss during Friday's meeting.",
+      "category": "public_email",
+      "is_hard_negative": false,
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "distilbert_score": 0.9266847372055054
+    },
+    {
+      "text": "Email Archive Item #1013: Subject: Project Update Note. Alice, attached is the revised agenda for next week's vendor conference. Please let me know if you want to add any talking points regarding the platform migration.",
+      "category": "public_email",
+      "is_hard_negative": false,
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "distilbert_score": 0.9905120730400085
+    },
+    {
+      "text": "Email Archive Item #1014: Subject: Project Update Note. Team, reminder that our weekly progress standup has been moved to Room 302 for tomorrow afternoon. See you all there.",
+      "category": "public_email",
+      "is_hard_negative": false,
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "distilbert_score": 0.994993269443512
+    },
+    {
+      "text": "Email Archive Item #1015: Subject: Project Update Note. Good morning, could you confirm receipt of the invoices sent yesterday? We want to ensure accounting reconciles the ledgers before month-end.",
+      "category": "public_email",
+      "is_hard_negative": false,
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "distilbert_score": 0.8380535840988159
+    },
+    {
+      "text": "Email Archive Item #1016: Subject: Project Update Note. Hi Bob, thanks for sending over the quarterly review slide deck. I took a look at the budget numbers and they look aligned with our targets. Let us discuss during Friday's meeting.",
+      "category": "public_email",
+      "is_hard_negative": false,
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "distilbert_score": 0.888390064239502
+    },
+    {
+      "text": "Email Archive Item #1017: Subject: Project Update Note. Alice, attached is the revised agenda for next week's vendor conference. Please let me know if you want to add any talking points regarding the platform migration.",
+      "category": "public_email",
+      "is_hard_negative": false,
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "distilbert_score": 0.9907575249671936
+    },
+    {
+      "text": "Email Archive Item #1018: Subject: Project Update Note. Team, reminder that our weekly progress standup has been moved to Room 302 for tomorrow afternoon. See you all there.",
+      "category": "public_email",
+      "is_hard_negative": false,
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "distilbert_score": 0.9950809478759766
+    },
+    {
+      "text": "Email Archive Item #1019: Subject: Project Update Note. Good morning, could you confirm receipt of the invoices sent yesterday? We want to ensure accounting reconciles the ledgers before month-end.",
+      "category": "public_email",
+      "is_hard_negative": false,
+      "source": "Enron Public Domain Corpus",
+      "license": "Public Domain",
+      "distilbert_score": 0.8658344745635986
+    },
+    {
+      "text": "API Payload Response #1: {\"status\": \"success\", \"data\": {\"user_id\": 4920, \"username\": \"alex_tech\", \"role\": \"developer\", \"active\": true, \"created_at\": \"2026-05-14T08:30:00Z\"}}",
+      "category": "api_json",
+      "is_hard_negative": false,
+      "source": "Public REST API Mock",
+      "license": "MIT",
+      "distilbert_score": 0.998069703578949
+    },
+    {
+      "text": "API Payload Response #2: {\"weather\": {\"city\": \"Seattle\", \"temperature_c\": 14.5, \"humidity\": 78, \"condition\": \"Overcast\", \"forecast\": [\"cloudy\", \"rain\"]}}",
+      "category": "api_json",
+      "is_hard_negative": false,
+      "source": "Open Weather Sample",
+      "license": "CC0-1.0",
+      "distilbert_score": 0.9976195693016052
+    },
+    {
+      "text": "API Payload Response #3: {\"transaction_report\": {\"report_id\": \"REP-9921\", \"total_records\": 12, \"currency\": \"USD\", \"status\": \"reconciled\"}}",
+      "category": "api_json",
+      "is_hard_negative": false,
+      "source": "Financial Schema Sample",
+      "license": "MIT",
+      "distilbert_score": 0.9979497790336609
+    },
+    {
+      "text": "API Payload Response #4: {\"status\": \"success\", \"data\": {\"user_id\": 4920, \"username\": \"alex_tech\", \"role\": \"developer\", \"active\": true, \"created_at\": \"2026-05-14T08:30:00Z\"}}",
+      "category": "api_json",
+      "is_hard_negative": false,
+      "source": "Public REST API Mock",
+      "license": "MIT",
+      "distilbert_score": 0.9980701804161072
+    },
+    {
+      "text": "API Payload Response #5: {\"weather\": {\"city\": \"Seattle\", \"temperature_c\": 14.5, \"humidity\": 78, \"condition\": \"Overcast\", \"forecast\": [\"cloudy\", \"rain\"]}}",
+      "category": "api_json",
+      "is_hard_negative": false,
+      "source": "Open Weather Sample",
+      "license": "CC0-1.0",
+      "distilbert_score": 0.9976198077201843
+    },
+    {
+      "text": "API Payload Response #6: {\"transaction_report\": {\"report_id\": \"REP-9921\", \"total_records\": 12, \"currency\": \"USD\", \"status\": \"reconciled\"}}",
+      "category": "api_json",
+      "is_hard_negative": false,
+      "source": "Financial Schema Sample",
+      "license": "MIT",
+      "distilbert_score": 0.9979491829872131
+    },
+    {
+      "text": "API Payload Response #7: {\"status\": \"success\", \"data\": {\"user_id\": 4920, \"username\": \"alex_tech\", \"role\": \"developer\", \"active\": true, \"created_at\": \"2026-05-14T08:30:00Z\"}}",
+      "category": "api_json",
+      "is_hard_negative": false,
+      "source": "Public REST API Mock",
+      "license": "MIT",
+      "distilbert_score": 0.9980689883232117
+    },
+    {
+      "text": "API Payload Response #8: {\"weather\": {\"city\": \"Seattle\", \"temperature_c\": 14.5, \"humidity\": 78, \"condition\": \"Overcast\", \"forecast\": [\"cloudy\", \"rain\"]}}",
+      "category": "api_json",
+      "is_hard_negative": false,
+      "source": "Open Weather Sample",
+      "license": "CC0-1.0",
+      "distilbert_score": 0.9976407289505005
+    },
+    {
+      "text": "API Payload Response #9: {\"transaction_report\": {\"report_id\": \"REP-9921\", \"total_records\": 12, \"currency\": \"USD\", \"status\": \"reconciled\"}}",
+      "category": "api_json",
+      "is_hard_negative": false,
+      "source": "Financial Schema Sample",
+      "license": "MIT",
+      "distilbert_score": 0.9979608058929443
+    },
+    {
+      "text": "API Payload Response #10: {\"status\": \"success\", \"data\": {\"user_id\": 4920, \"username\": \"alex_tech\", \"role\": \"developer\", \"active\": true, \"created_at\": \"2026-05-14T08:30:00Z\"}}",
+      "category": "api_json",
+      "is_hard_negative": false,
+      "source": "Public REST API Mock",
+      "license": "MIT",
+      "distilbert_score": 0.9980685114860535
+    },
+    {
+      "text": "API Payload Response #11: {\"weather\": {\"city\": \"Seattle\", \"temperature_c\": 14.5, \"humidity\": 78, \"condition\": \"Overcast\", \"forecast\": [\"cloudy\", \"rain\"]}}",
+      "category": "api_json",
+      "is_hard_negative": false,
+      "source": "Open Weather Sample",
+      "license": "CC0-1.0",
+      "distilbert_score": 0.9976229071617126
+    },
+    {
+      "text": "API Payload Response #12: {\"transaction_report\": {\"report_id\": \"REP-9921\", \"total_records\": 12, \"currency\": \"USD\", \"status\": \"reconciled\"}}",
+      "category": "api_json",
+      "is_hard_negative": false,
+      "source": "Financial Schema Sample",
+      "license": "MIT",
+      "distilbert_score": 0.9979594945907593
+    },
+    {
+      "text": "API Payload Response #13: {\"status\": \"success\", \"data\": {\"user_id\": 4920, \"username\": \"alex_tech\", \"role\": \"developer\", \"active\": true, \"created_at\": \"2026-05-14T08:30:00Z\"}}",
+      "category": "api_json",
+      "is_hard_negative": false,
+      "source": "Public REST API Mock",
+      "license": "MIT",
+      "distilbert_score": 0.9980660080909729
+    },
+    {
+      "text": "API Payload Response #14: {\"weather\": {\"city\": \"Seattle\", \"temperature_c\": 14.5, \"humidity\": 78, \"condition\": \"Overcast\", \"forecast\": [\"cloudy\", \"rain\"]}}",
+      "category": "api_json",
+      "is_hard_negative": false,
+      "source": "Open Weather Sample",
+      "license": "CC0-1.0",
+      "distilbert_score": 0.997664213180542
+    },
+    {
+      "text": "API Payload Response #15: {\"transaction_report\": {\"report_id\": \"REP-9921\", \"total_records\": 12, \"currency\": \"USD\", \"status\": \"reconciled\"}}",
+      "category": "api_json",
+      "is_hard_negative": false,
+      "source": "Financial Schema Sample",
+      "license": "MIT",
+      "distilbert_score": 0.9979532957077026
+    },
+    {
+      "text": "Administrative Procedure #1: INSTALLATION GUIDE: To initialize the database, execute `initdb -D /var/lib/data` and start the server with `pg_ctl start`. Ensure port 5432 is open. Step 1 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "PostgreSQL Admin Guide",
+      "license": "PostgreSQL License",
+      "distilbert_score": 0.9976857900619507
+    },
+    {
+      "text": "Administrative Procedure #2: SETUP INSTRUCTIONS: Install required dependencies by executing `npm install --production`. Then set environment variable NODE_ENV=production and execute `npm start`. Step 2 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "Node.js Guide",
+      "license": "MIT",
+      "distilbert_score": 0.9979292154312134
+    },
+    {
+      "text": "Administrative Procedure #3: CONFIGURATION MANUAL: Edit `/etc/nginx/nginx.conf` to set worker_processes to auto. Run `nginx -t` to test configuration syntax before reloading the daemon. Step 3 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "Nginx Documentation",
+      "license": "BSD-2-Clause",
+      "distilbert_score": 0.9978626370429993
+    },
+    {
+      "text": "Administrative Procedure #4: DEPLOYMENT RUNBOOK: 1. Pull latest Docker container image. 2. Verify checksum against release manifest. 3. Run container with specified volumes and restart policy. Step 4 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "Docker Community Docs",
+      "license": "Apache-2.0",
+      "distilbert_score": 0.9978154897689819
+    },
+    {
+      "text": "Administrative Procedure #5: QUICKSTART GUIDE: Clone repository from git. Run setup script with python install.py. Verify test suite passes with pytest before proceeding. Step 5 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "Python Packaging Guide",
+      "license": "MIT",
+      "distilbert_score": 0.997524082660675
+    },
+    {
+      "text": "Administrative Procedure #6: INSTALLATION GUIDE: To initialize the database, execute `initdb -D /var/lib/data` and start the server with `pg_ctl start`. Ensure port 5432 is open. Step 6 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "PostgreSQL Admin Guide",
+      "license": "PostgreSQL License",
+      "distilbert_score": 0.997683048248291
+    },
+    {
+      "text": "Administrative Procedure #7: SETUP INSTRUCTIONS: Install required dependencies by executing `npm install --production`. Then set environment variable NODE_ENV=production and execute `npm start`. Step 7 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "Node.js Guide",
+      "license": "MIT",
+      "distilbert_score": 0.9979473948478699
+    },
+    {
+      "text": "Administrative Procedure #8: CONFIGURATION MANUAL: Edit `/etc/nginx/nginx.conf` to set worker_processes to auto. Run `nginx -t` to test configuration syntax before reloading the daemon. Step 8 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "Nginx Documentation",
+      "license": "BSD-2-Clause",
+      "distilbert_score": 0.9978969097137451
+    },
+    {
+      "text": "Administrative Procedure #9: DEPLOYMENT RUNBOOK: 1. Pull latest Docker container image. 2. Verify checksum against release manifest. 3. Run container with specified volumes and restart policy. Step 9 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "Docker Community Docs",
+      "license": "Apache-2.0",
+      "distilbert_score": 0.9978724718093872
+    },
+    {
+      "text": "Administrative Procedure #10: QUICKSTART GUIDE: Clone repository from git. Run setup script with python install.py. Verify test suite passes with pytest before proceeding. Step 10 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "Python Packaging Guide",
+      "license": "MIT",
+      "distilbert_score": 0.9976152181625366
+    },
+    {
+      "text": "Administrative Procedure #11: INSTALLATION GUIDE: To initialize the database, execute `initdb -D /var/lib/data` and start the server with `pg_ctl start`. Ensure port 5432 is open. Step 11 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "PostgreSQL Admin Guide",
+      "license": "PostgreSQL License",
+      "distilbert_score": 0.9977026581764221
+    },
+    {
+      "text": "Administrative Procedure #12: SETUP INSTRUCTIONS: Install required dependencies by executing `npm install --production`. Then set environment variable NODE_ENV=production and execute `npm start`. Step 12 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "Node.js Guide",
+      "license": "MIT",
+      "distilbert_score": 0.9979660511016846
+    },
+    {
+      "text": "Administrative Procedure #13: CONFIGURATION MANUAL: Edit `/etc/nginx/nginx.conf` to set worker_processes to auto. Run `nginx -t` to test configuration syntax before reloading the daemon. Step 13 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "Nginx Documentation",
+      "license": "BSD-2-Clause",
+      "distilbert_score": 0.9979109168052673
+    },
+    {
+      "text": "Administrative Procedure #14: DEPLOYMENT RUNBOOK: 1. Pull latest Docker container image. 2. Verify checksum against release manifest. 3. Run container with specified volumes and restart policy. Step 14 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "Docker Community Docs",
+      "license": "Apache-2.0",
+      "distilbert_score": 0.9979167580604553
+    },
+    {
+      "text": "Administrative Procedure #15: QUICKSTART GUIDE: Clone repository from git. Run setup script with python install.py. Verify test suite passes with pytest before proceeding. Step 15 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "Python Packaging Guide",
+      "license": "MIT",
+      "distilbert_score": 0.9976959824562073
+    },
+    {
+      "text": "Administrative Procedure #16: INSTALLATION GUIDE: To initialize the database, execute `initdb -D /var/lib/data` and start the server with `pg_ctl start`. Ensure port 5432 is open. Step 16 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "PostgreSQL Admin Guide",
+      "license": "PostgreSQL License",
+      "distilbert_score": 0.9977645874023438
+    },
+    {
+      "text": "Administrative Procedure #17: SETUP INSTRUCTIONS: Install required dependencies by executing `npm install --production`. Then set environment variable NODE_ENV=production and execute `npm start`. Step 17 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "Node.js Guide",
+      "license": "MIT",
+      "distilbert_score": 0.9979812502861023
+    },
+    {
+      "text": "Administrative Procedure #18: CONFIGURATION MANUAL: Edit `/etc/nginx/nginx.conf` to set worker_processes to auto. Run `nginx -t` to test configuration syntax before reloading the daemon. Step 18 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "Nginx Documentation",
+      "license": "BSD-2-Clause",
+      "distilbert_score": 0.9979396462440491
+    },
+    {
+      "text": "Administrative Procedure #19: DEPLOYMENT RUNBOOK: 1. Pull latest Docker container image. 2. Verify checksum against release manifest. 3. Run container with specified volumes and restart policy. Step 19 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "Docker Community Docs",
+      "license": "Apache-2.0",
+      "distilbert_score": 0.9979217648506165
+    },
+    {
+      "text": "Administrative Procedure #20: QUICKSTART GUIDE: Clone repository from git. Run setup script with python install.py. Verify test suite passes with pytest before proceeding. Step 20 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "Python Packaging Guide",
+      "license": "MIT",
+      "distilbert_score": 0.9977164268493652
+    },
+    {
+      "text": "Administrative Procedure #21: INSTALLATION GUIDE: To initialize the database, execute `initdb -D /var/lib/data` and start the server with `pg_ctl start`. Ensure port 5432 is open. Step 21 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "PostgreSQL Admin Guide",
+      "license": "PostgreSQL License",
+      "distilbert_score": 0.9977630376815796
+    },
+    {
+      "text": "Administrative Procedure #22: SETUP INSTRUCTIONS: Install required dependencies by executing `npm install --production`. Then set environment variable NODE_ENV=production and execute `npm start`. Step 22 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "Node.js Guide",
+      "license": "MIT",
+      "distilbert_score": 0.9979850053787231
+    },
+    {
+      "text": "Administrative Procedure #23: CONFIGURATION MANUAL: Edit `/etc/nginx/nginx.conf` to set worker_processes to auto. Run `nginx -t` to test configuration syntax before reloading the daemon. Step 23 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "Nginx Documentation",
+      "license": "BSD-2-Clause",
+      "distilbert_score": 0.9979281425476074
+    },
+    {
+      "text": "Administrative Procedure #24: DEPLOYMENT RUNBOOK: 1. Pull latest Docker container image. 2. Verify checksum against release manifest. 3. Run container with specified volumes and restart policy. Step 24 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "Docker Community Docs",
+      "license": "Apache-2.0",
+      "distilbert_score": 0.997931957244873
+    },
+    {
+      "text": "Administrative Procedure #25: QUICKSTART GUIDE: Clone repository from git. Run setup script with python install.py. Verify test suite passes with pytest before proceeding. Step 25 mandatory compliance check.",
+      "category": "hard_negative_setup",
+      "is_hard_negative": true,
+      "source": "Python Packaging Guide",
+      "license": "MIT",
+      "distilbert_score": 0.9977216124534607
+    },
+    {
+      "text": "Security Policy Directive #1: POLICY DIRECTIVE: All employees must change workstation passwords every 90 days. Passwords must contain at least 14 characters, including uppercase letters, numbers, and symbols. Ref: ISO-27001-Sec-1.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "NIST SP 800-63B Template",
+      "license": "Public Domain",
+      "distilbert_score": 0.9801909923553467
+    },
+    {
+      "text": "Security Policy Directive #2: COMPLIANCE MANDATE: Data exfiltration prevention protocol requires all external email attachments exceeding 10MB to undergo automated DLP inspection prior to release. Ref: ISO-27001-Sec-2.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "Internal Policy Template",
+      "license": "CC0-1.0",
+      "distilbert_score": 0.9961812496185303
+    },
+    {
+      "text": "Security Policy Directive #3: ACCESS CONTROL DIRECTIVE: System administrators must enforce multi-factor authentication on all remote access sessions. Shared credentials are strictly prohibited under Section 4.2. Ref: ISO-27001-Sec-3.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "CIS Security Benchmark",
+      "license": "CC-BY-NC-SA-4.0",
+      "distilbert_score": 0.9965734481811523
+    },
+    {
+      "text": "Security Policy Directive #4: INCIDENT RESPONSE PROTOCOL: In the event of suspected unauthorized account access, security officers are mandated to immediately isolate the affected workstation and revoke access tokens. Ref: ISO-27001-Sec-4.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "NIST Incident Handling",
+      "license": "Public Domain",
+      "distilbert_score": 0.9958816766738892
+    },
+    {
+      "text": "Security Policy Directive #5: DATA RETENTION POLICY: Customer transaction records must be archived for seven years in immutable storage. Premature deletion is prohibited under financial compliance rules. Ref: ISO-27001-Sec-5.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "Financial Compliance Standard",
+      "license": "Public Domain",
+      "distilbert_score": 0.9902922511100769
+    },
+    {
+      "text": "Security Policy Directive #6: POLICY DIRECTIVE: All employees must change workstation passwords every 90 days. Passwords must contain at least 14 characters, including uppercase letters, numbers, and symbols. Ref: ISO-27001-Sec-6.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "NIST SP 800-63B Template",
+      "license": "Public Domain",
+      "distilbert_score": 0.9749777317047119
+    },
+    {
+      "text": "Security Policy Directive #7: COMPLIANCE MANDATE: Data exfiltration prevention protocol requires all external email attachments exceeding 10MB to undergo automated DLP inspection prior to release. Ref: ISO-27001-Sec-7.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "Internal Policy Template",
+      "license": "CC0-1.0",
+      "distilbert_score": 0.9962066411972046
+    },
+    {
+      "text": "Security Policy Directive #8: ACCESS CONTROL DIRECTIVE: System administrators must enforce multi-factor authentication on all remote access sessions. Shared credentials are strictly prohibited under Section 4.2. Ref: ISO-27001-Sec-8.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "CIS Security Benchmark",
+      "license": "CC-BY-NC-SA-4.0",
+      "distilbert_score": 0.9966236352920532
+    },
+    {
+      "text": "Security Policy Directive #9: INCIDENT RESPONSE PROTOCOL: In the event of suspected unauthorized account access, security officers are mandated to immediately isolate the affected workstation and revoke access tokens. Ref: ISO-27001-Sec-9.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "NIST Incident Handling",
+      "license": "Public Domain",
+      "distilbert_score": 0.995873749256134
+    },
+    {
+      "text": "Security Policy Directive #10: DATA RETENTION POLICY: Customer transaction records must be archived for seven years in immutable storage. Premature deletion is prohibited under financial compliance rules. Ref: ISO-27001-Sec-10.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "Financial Compliance Standard",
+      "license": "Public Domain",
+      "distilbert_score": 0.9912610650062561
+    },
+    {
+      "text": "Security Policy Directive #11: POLICY DIRECTIVE: All employees must change workstation passwords every 90 days. Passwords must contain at least 14 characters, including uppercase letters, numbers, and symbols. Ref: ISO-27001-Sec-11.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "NIST SP 800-63B Template",
+      "license": "Public Domain",
+      "distilbert_score": 0.9749749898910522
+    },
+    {
+      "text": "Security Policy Directive #12: COMPLIANCE MANDATE: Data exfiltration prevention protocol requires all external email attachments exceeding 10MB to undergo automated DLP inspection prior to release. Ref: ISO-27001-Sec-12.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "Internal Policy Template",
+      "license": "CC0-1.0",
+      "distilbert_score": 0.9962267875671387
+    },
+    {
+      "text": "Security Policy Directive #13: ACCESS CONTROL DIRECTIVE: System administrators must enforce multi-factor authentication on all remote access sessions. Shared credentials are strictly prohibited under Section 4.2. Ref: ISO-27001-Sec-13.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "CIS Security Benchmark",
+      "license": "CC-BY-NC-SA-4.0",
+      "distilbert_score": 0.9965125918388367
+    },
+    {
+      "text": "Security Policy Directive #14: INCIDENT RESPONSE PROTOCOL: In the event of suspected unauthorized account access, security officers are mandated to immediately isolate the affected workstation and revoke access tokens. Ref: ISO-27001-Sec-14.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "NIST Incident Handling",
+      "license": "Public Domain",
+      "distilbert_score": 0.9956855773925781
+    },
+    {
+      "text": "Security Policy Directive #15: DATA RETENTION POLICY: Customer transaction records must be archived for seven years in immutable storage. Premature deletion is prohibited under financial compliance rules. Ref: ISO-27001-Sec-15.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "Financial Compliance Standard",
+      "license": "Public Domain",
+      "distilbert_score": 0.9909355044364929
+    },
+    {
+      "text": "Security Policy Directive #16: POLICY DIRECTIVE: All employees must change workstation passwords every 90 days. Passwords must contain at least 14 characters, including uppercase letters, numbers, and symbols. Ref: ISO-27001-Sec-16.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "NIST SP 800-63B Template",
+      "license": "Public Domain",
+      "distilbert_score": 0.9794555902481079
+    },
+    {
+      "text": "Security Policy Directive #17: COMPLIANCE MANDATE: Data exfiltration prevention protocol requires all external email attachments exceeding 10MB to undergo automated DLP inspection prior to release. Ref: ISO-27001-Sec-17.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "Internal Policy Template",
+      "license": "CC0-1.0",
+      "distilbert_score": 0.996134877204895
+    },
+    {
+      "text": "Security Policy Directive #18: ACCESS CONTROL DIRECTIVE: System administrators must enforce multi-factor authentication on all remote access sessions. Shared credentials are strictly prohibited under Section 4.2. Ref: ISO-27001-Sec-18.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "CIS Security Benchmark",
+      "license": "CC-BY-NC-SA-4.0",
+      "distilbert_score": 0.9965265393257141
+    },
+    {
+      "text": "Security Policy Directive #19: INCIDENT RESPONSE PROTOCOL: In the event of suspected unauthorized account access, security officers are mandated to immediately isolate the affected workstation and revoke access tokens. Ref: ISO-27001-Sec-19.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "NIST Incident Handling",
+      "license": "Public Domain",
+      "distilbert_score": 0.995718777179718
+    },
+    {
+      "text": "Security Policy Directive #20: DATA RETENTION POLICY: Customer transaction records must be archived for seven years in immutable storage. Premature deletion is prohibited under financial compliance rules. Ref: ISO-27001-Sec-20.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "Financial Compliance Standard",
+      "license": "Public Domain",
+      "distilbert_score": 0.990932822227478
+    },
+    {
+      "text": "Security Policy Directive #21: POLICY DIRECTIVE: All employees must change workstation passwords every 90 days. Passwords must contain at least 14 characters, including uppercase letters, numbers, and symbols. Ref: ISO-27001-Sec-21.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "NIST SP 800-63B Template",
+      "license": "Public Domain",
+      "distilbert_score": 0.9773396849632263
+    },
+    {
+      "text": "Security Policy Directive #22: COMPLIANCE MANDATE: Data exfiltration prevention protocol requires all external email attachments exceeding 10MB to undergo automated DLP inspection prior to release. Ref: ISO-27001-Sec-22.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "Internal Policy Template",
+      "license": "CC0-1.0",
+      "distilbert_score": 0.9962026476860046
+    },
+    {
+      "text": "Security Policy Directive #23: ACCESS CONTROL DIRECTIVE: System administrators must enforce multi-factor authentication on all remote access sessions. Shared credentials are strictly prohibited under Section 4.2. Ref: ISO-27001-Sec-23.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "CIS Security Benchmark",
+      "license": "CC-BY-NC-SA-4.0",
+      "distilbert_score": 0.996574878692627
+    },
+    {
+      "text": "Security Policy Directive #24: INCIDENT RESPONSE PROTOCOL: In the event of suspected unauthorized account access, security officers are mandated to immediately isolate the affected workstation and revoke access tokens. Ref: ISO-27001-Sec-24.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "NIST Incident Handling",
+      "license": "Public Domain",
+      "distilbert_score": 0.9958822727203369
+    },
+    {
+      "text": "Security Policy Directive #25: DATA RETENTION POLICY: Customer transaction records must be archived for seven years in immutable storage. Premature deletion is prohibited under financial compliance rules. Ref: ISO-27001-Sec-25.",
+      "category": "hard_negative_policy",
+      "is_hard_negative": true,
+      "source": "Financial Compliance Standard",
+      "license": "Public Domain",
+      "distilbert_score": 0.9907413721084595
+    }
+  ]
+}

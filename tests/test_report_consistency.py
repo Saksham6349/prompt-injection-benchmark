@@ -51,33 +51,41 @@ def test_scores_l2_discrimination_derived_from_inputs() -> None:
     assert abs(np.mean(ben_scores) - discrim_data["benign_stats"]["mean"]) < 1e-6
 
 
-def test_no_hardcoded_metric_literals_in_phase1e_generator() -> None:
-    """Scans the Phase 1e generator script for banned hardcoded metric literals."""
-    generator_file = SCRIPTS_DIR / "run_phase1e_closure.py"
-    assert generator_file.exists(), "run_phase1e_closure.py missing"
+def test_generate_and_diff_l2_discrimination_report() -> None:
+    """Generate-and-diff test: re-runs metric generation from raw score files and diffs with committed copy."""
+    l2_inputs_file = RESULTS_DIR / "scores_L2_inputs.jsonl"
+    committed_discrim_file = RESULTS_DIR / "scores_L2_discrimination.json"
 
-    with open(generator_file, encoding="utf-8") as f:
-        code_lines = f.readlines()
+    assert l2_inputs_file.exists(), "scores_L2_inputs.jsonl missing"
+    assert committed_discrim_file.exists(), "scores_L2_discrimination.json missing"
 
-    banned_literals = [
-        r'"2/50"',
-        r"'2/50'",
-        r'"22/50"',
-        r"'22/50'",
-        r'"4\.0%"',
-        r"'4\.0%'",
-        r'"44\.0%"',
-        r"'44\.0%'",
-    ]
+    with open(l2_inputs_file, encoding="utf-8") as f:
+        records = [json.loads(line) for line in f]
 
-    for line_idx, line in enumerate(code_lines, 1):
-        clean_line = line.strip()
-        if clean_line.startswith("#") or clean_line.startswith('"""'):
-            continue
-        for pat in banned_literals:
-            assert not re.search(pat, line), (
-                f"Hardcoded metric literal '{pat}' found at {generator_file.name}:{line_idx}: {clean_line}"
-            )
+    with open(committed_discrim_file, encoding="utf-8") as f:
+        committed_data = json.load(f)
+
+    # Dynamic re-generation from raw scores
+    import numpy as np
+    from sklearn.metrics import roc_auc_score, average_precision_score
+
+    atk_scores = [r["distilbert_score"] for r in records if not r["is_benign"]]
+    ben_scores = [r["distilbert_score"] for r in records if r["is_benign"]]
+    y_true = [1 if not r["is_benign"] else 0 for r in records]
+    y_scores = [r["distilbert_score"] for r in records]
+
+    generated_auroc = float(roc_auc_score(y_true, y_scores))
+    generated_auprc = float(average_precision_score(y_true, y_scores))
+
+    # Diff generated against committed (tolerance 1e-9)
+    assert abs(generated_auroc - committed_data["overall_auroc"]) < 1e-9, (
+        f"Diff in AUROC: generated={generated_auroc}, committed={committed_data['overall_auroc']}"
+    )
+    assert abs(generated_auprc - committed_data["overall_auprc"]) < 1e-9, (
+        f"Diff in AUPRC: generated={generated_auprc}, committed={committed_data['overall_auprc']}"
+    )
+    assert abs(float(np.mean(atk_scores)) - committed_data["attack_stats"]["mean"]) < 1e-9
+    assert abs(float(np.mean(ben_scores)) - committed_data["benign_stats"]["mean"]) < 1e-9
 
 
 def test_probe_condition_counts_invariant() -> None:
@@ -93,14 +101,15 @@ def test_probe_condition_counts_invariant() -> None:
 
 
 def test_cell_matrix_reconciliation_invariant() -> None:
-    """Asserts that the 60 populated cells sum exactly to 60 and 450 attacks."""
+    """Asserts that the 60 populated cells sum exactly to 60 and 450 attacks across 112 cells."""
     matrix_file = RESULTS_DIR / "taxonomy_cell_matrix.json"
     assert matrix_file.exists(), "taxonomy_cell_matrix.json missing"
     with open(matrix_file, encoding="utf-8") as f:
         m = json.load(f)
 
     assert m["total_populated_cells"] == 60
-    assert m["theoretical_cells"] == 160
+    assert m["theoretical_cells"] == 112
+    assert m["empty_cells"] == 52
     total_cases = sum(t["total_cases"] for t in m["techniques"])
     total_cells = sum(t["populated_cells"] for t in m["techniques"])
     assert total_cases == 450

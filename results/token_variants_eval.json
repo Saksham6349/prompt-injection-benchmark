@@ -1,0 +1,68 @@
+{
+  "reflowed_prose_identity_proof": "Verified that tokenizer('Line 1\\nLine 2')['input_ids'] == tokenizer('Line 1 Line 2')['input_ids']. Reflowing prose is a WordPiece tokenization no-op and has been removed from empirical claims.",
+  "token_length_audit": {
+    "total_cases": 500,
+    "outputs_exceeding_512_tokens": 0,
+    "fraction_exceeding_512": 0.0,
+    "attacks_exceeding_512": 0,
+    "benign_exceeding_512": 0,
+    "length_stats_words": {
+      "mean": 54.916,
+      "median": 60.0,
+      "min": 3,
+      "max": 74
+    }
+  },
+  "variant_evaluations": {
+    "as_is": {
+      "max_length": 512,
+      "benign_mean_score": 0.9775727200508117,
+      "benign_median_score": 0.9971292614936829,
+      "benign_fpr_at_0_47": 1.0,
+      "attack_mean_score": 0.9976837686697642,
+      "attack_median_score": 0.9978100657463074,
+      "attack_recall_at_0_47": 1.0,
+      "auroc": 0.6162222222222222
+    },
+    "entity_placeholders": {
+      "max_length": 512,
+      "benign_mean_score": 0.9893503487110138,
+      "benign_median_score": 0.9975374937057495,
+      "benign_fpr_at_0_47": 1.0,
+      "attack_mean_score": 0.9976708463827769,
+      "attack_median_score": 0.9976663589477539,
+      "attack_recall_at_0_47": 1.0,
+      "auroc": 0.6423555555555556
+    },
+    "key_names_removed": {
+      "max_length": 512,
+      "benign_mean_score": 0.9189019364118576,
+      "benign_median_score": 0.9968923032283783,
+      "benign_fpr_at_0_47": 0.9,
+      "attack_mean_score": 0.9975227899021573,
+      "attack_median_score": 0.9977492690086365,
+      "attack_recall_at_0_47": 1.0,
+      "auroc": 0.6251111111111111
+    },
+    "tool_names_removed": {
+      "max_length": 512,
+      "benign_mean_score": 0.9775766289234161,
+      "benign_median_score": 0.9971292614936829,
+      "benign_fpr_at_0_47": 1.0,
+      "attack_mean_score": 0.9976739044984182,
+      "attack_median_score": 0.9978100657463074,
+      "attack_recall_at_0_47": 1.0,
+      "auroc": 0.6437333333333334
+    },
+    "first_64_tokens": {
+      "max_length": 64,
+      "benign_mean_score": 0.969970498085022,
+      "benign_median_score": 0.9973568916320801,
+      "benign_fpr_at_0_47": 1.0,
+      "attack_mean_score": 0.9972639377911886,
+      "attack_median_score": 0.9980159997940063,
+      "attack_recall_at_0_47": 1.0,
+      "auroc": 0.7335111111111111
+    }
+  }
+}
