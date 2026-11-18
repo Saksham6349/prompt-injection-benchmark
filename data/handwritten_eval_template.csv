@@ -1,0 +1,121 @@
+id,label,language,format,input_text,author,notes
+hw_atk_001,1,hi-en,email,[FILL: Human-written attack #1 in hi-en (email format)],Human Author,Non-templated natural attack payload
+hw_atk_002,1,hi-en,json,[FILL: Human-written attack #2 in hi-en (json format)],Human Author,Non-templated natural attack payload
+hw_atk_003,1,hi-en,html,[FILL: Human-written attack #3 in hi-en (html format)],Human Author,Non-templated natural attack payload
+hw_atk_004,1,hi-en,plain_text,[FILL: Human-written attack #4 in hi-en (plain_text format)],Human Author,Non-templated natural attack payload
+hw_atk_005,1,hi-en,email,[FILL: Human-written attack #5 in hi-en (email format)],Human Author,Non-templated natural attack payload
+hw_atk_006,1,hi-en,json,[FILL: Human-written attack #6 in hi-en (json format)],Human Author,Non-templated natural attack payload
+hw_atk_007,1,hi-en,html,[FILL: Human-written attack #7 in hi-en (html format)],Human Author,Non-templated natural attack payload
+hw_atk_008,1,hi-en,plain_text,[FILL: Human-written attack #8 in hi-en (plain_text format)],Human Author,Non-templated natural attack payload
+hw_atk_009,1,hi-en,email,[FILL: Human-written attack #9 in hi-en (email format)],Human Author,Non-templated natural attack payload
+hw_atk_010,1,hi-en,json,[FILL: Human-written attack #10 in hi-en (json format)],Human Author,Non-templated natural attack payload
+hw_atk_011,1,hi-en,html,[FILL: Human-written attack #11 in hi-en (html format)],Human Author,Non-templated natural attack payload
+hw_atk_012,1,hi-en,plain_text,[FILL: Human-written attack #12 in hi-en (plain_text format)],Human Author,Non-templated natural attack payload
+hw_atk_013,1,hi-en,email,[FILL: Human-written attack #13 in hi-en (email format)],Human Author,Non-templated natural attack payload
+hw_atk_014,1,hi-en,json,[FILL: Human-written attack #14 in hi-en (json format)],Human Author,Non-templated natural attack payload
+hw_atk_015,1,hi-en,html,[FILL: Human-written attack #15 in hi-en (html format)],Human Author,Non-templated natural attack payload
+hw_atk_016,1,hi-en,plain_text,[FILL: Human-written attack #16 in hi-en (plain_text format)],Human Author,Non-templated natural attack payload
+hw_atk_017,1,hi-en,email,[FILL: Human-written attack #17 in hi-en (email format)],Human Author,Non-templated natural attack payload
+hw_atk_018,1,hi-en,json,[FILL: Human-written attack #18 in hi-en (json format)],Human Author,Non-templated natural attack payload
+hw_atk_019,1,hi-en,html,[FILL: Human-written attack #19 in hi-en (html format)],Human Author,Non-templated natural attack payload
+hw_atk_020,1,hi-en,plain_text,[FILL: Human-written attack #20 in hi-en (plain_text format)],Human Author,Non-templated natural attack payload
+hw_atk_021,1,en,email,[FILL: Human-written attack #21 in en (email format)],Human Author,Non-templated natural attack payload
+hw_atk_022,1,en,json,[FILL: Human-written attack #22 in en (json format)],Human Author,Non-templated natural attack payload
+hw_atk_023,1,en,html,[FILL: Human-written attack #23 in en (html format)],Human Author,Non-templated natural attack payload
+hw_atk_024,1,en,plain_text,[FILL: Human-written attack #24 in en (plain_text format)],Human Author,Non-templated natural attack payload
+hw_atk_025,1,en,email,[FILL: Human-written attack #25 in en (email format)],Human Author,Non-templated natural attack payload
+hw_atk_026,1,en,json,[FILL: Human-written attack #26 in en (json format)],Human Author,Non-templated natural attack payload
+hw_atk_027,1,en,html,[FILL: Human-written attack #27 in en (html format)],Human Author,Non-templated natural attack payload
+hw_atk_028,1,en,plain_text,[FILL: Human-written attack #28 in en (plain_text format)],Human Author,Non-templated natural attack payload
+hw_atk_029,1,en,email,[FILL: Human-written attack #29 in en (email format)],Human Author,Non-templated natural attack payload
+hw_atk_030,1,en,json,[FILL: Human-written attack #30 in en (json format)],Human Author,Non-templated natural attack payload
+hw_atk_031,1,en,html,[FILL: Human-written attack #31 in en (html format)],Human Author,Non-templated natural attack payload
+hw_atk_032,1,en,plain_text,[FILL: Human-written attack #32 in en (plain_text format)],Human Author,Non-templated natural attack payload
+hw_atk_033,1,en,email,[FILL: Human-written attack #33 in en (email format)],Human Author,Non-templated natural attack payload
+hw_atk_034,1,en,json,[FILL: Human-written attack #34 in en (json format)],Human Author,Non-templated natural attack payload
+hw_atk_035,1,en,html,[FILL: Human-written attack #35 in en (html format)],Human Author,Non-templated natural attack payload
+hw_atk_036,1,en,plain_text,[FILL: Human-written attack #36 in en (plain_text format)],Human Author,Non-templated natural attack payload
+hw_atk_037,1,en,email,[FILL: Human-written attack #37 in en (email format)],Human Author,Non-templated natural attack payload
+hw_atk_038,1,en,json,[FILL: Human-written attack #38 in en (json format)],Human Author,Non-templated natural attack payload
+hw_atk_039,1,en,html,[FILL: Human-written attack #39 in en (html format)],Human Author,Non-templated natural attack payload
+hw_atk_040,1,en,plain_text,[FILL: Human-written attack #40 in en (plain_text format)],Human Author,Non-templated natural attack payload
+hw_atk_041,1,en,email,[FILL: Human-written attack #41 in en (email format)],Human Author,Non-templated natural attack payload
+hw_atk_042,1,en,json,[FILL: Human-written attack #42 in en (json format)],Human Author,Non-templated natural attack payload
+hw_atk_043,1,en,html,[FILL: Human-written attack #43 in en (html format)],Human Author,Non-templated natural attack payload
+hw_atk_044,1,en,plain_text,[FILL: Human-written attack #44 in en (plain_text format)],Human Author,Non-templated natural attack payload
+hw_atk_045,1,en,email,[FILL: Human-written attack #45 in en (email format)],Human Author,Non-templated natural attack payload
+hw_atk_046,1,en,json,[FILL: Human-written attack #46 in en (json format)],Human Author,Non-templated natural attack payload
+hw_atk_047,1,en,html,[FILL: Human-written attack #47 in en (html format)],Human Author,Non-templated natural attack payload
+hw_atk_048,1,en,plain_text,[FILL: Human-written attack #48 in en (plain_text format)],Human Author,Non-templated natural attack payload
+hw_atk_049,1,en,email,[FILL: Human-written attack #49 in en (email format)],Human Author,Non-templated natural attack payload
+hw_atk_050,1,en,json,[FILL: Human-written attack #50 in en (json format)],Human Author,Non-templated natural attack payload
+hw_atk_051,1,en,html,[FILL: Human-written attack #51 in en (html format)],Human Author,Non-templated natural attack payload
+hw_atk_052,1,en,plain_text,[FILL: Human-written attack #52 in en (plain_text format)],Human Author,Non-templated natural attack payload
+hw_atk_053,1,en,email,[FILL: Human-written attack #53 in en (email format)],Human Author,Non-templated natural attack payload
+hw_atk_054,1,en,json,[FILL: Human-written attack #54 in en (json format)],Human Author,Non-templated natural attack payload
+hw_atk_055,1,en,html,[FILL: Human-written attack #55 in en (html format)],Human Author,Non-templated natural attack payload
+hw_atk_056,1,en,plain_text,[FILL: Human-written attack #56 in en (plain_text format)],Human Author,Non-templated natural attack payload
+hw_atk_057,1,en,email,[FILL: Human-written attack #57 in en (email format)],Human Author,Non-templated natural attack payload
+hw_atk_058,1,en,json,[FILL: Human-written attack #58 in en (json format)],Human Author,Non-templated natural attack payload
+hw_atk_059,1,en,html,[FILL: Human-written attack #59 in en (html format)],Human Author,Non-templated natural attack payload
+hw_atk_060,1,en,plain_text,[FILL: Human-written attack #60 in en (plain_text format)],Human Author,Non-templated natural attack payload
+hw_ben_001,0,en,email,[FILL: Human-written benign tool output #1 (email format)],Human Author,Non-templated natural benign tool output
+hw_ben_002,0,en,json,[FILL: Human-written benign tool output #2 (json format)],Human Author,Non-templated natural benign tool output
+hw_ben_003,0,en,html,[FILL: Human-written benign tool output #3 (html format)],Human Author,Non-templated natural benign tool output
+hw_ben_004,0,en,plain_text,[FILL: Human-written benign tool output #4 (plain_text format)],Human Author,Non-templated natural benign tool output
+hw_ben_005,0,en,email,[FILL: Human-written benign tool output #5 (email format)],Human Author,Non-templated natural benign tool output
+hw_ben_006,0,en,json,[FILL: Human-written benign tool output #6 (json format)],Human Author,Non-templated natural benign tool output
+hw_ben_007,0,en,html,[FILL: Human-written benign tool output #7 (html format)],Human Author,Non-templated natural benign tool output
+hw_ben_008,0,en,plain_text,[FILL: Human-written benign tool output #8 (plain_text format)],Human Author,Non-templated natural benign tool output
+hw_ben_009,0,en,email,[FILL: Human-written benign tool output #9 (email format)],Human Author,Non-templated natural benign tool output
+hw_ben_010,0,en,json,[FILL: Human-written benign tool output #10 (json format)],Human Author,Non-templated natural benign tool output
+hw_ben_011,0,en,html,[FILL: Human-written benign tool output #11 (html format)],Human Author,Non-templated natural benign tool output
+hw_ben_012,0,en,plain_text,[FILL: Human-written benign tool output #12 (plain_text format)],Human Author,Non-templated natural benign tool output
+hw_ben_013,0,en,email,[FILL: Human-written benign tool output #13 (email format)],Human Author,Non-templated natural benign tool output
+hw_ben_014,0,en,json,[FILL: Human-written benign tool output #14 (json format)],Human Author,Non-templated natural benign tool output
+hw_ben_015,0,en,html,[FILL: Human-written benign tool output #15 (html format)],Human Author,Non-templated natural benign tool output
+hw_ben_016,0,en,plain_text,[FILL: Human-written benign tool output #16 (plain_text format)],Human Author,Non-templated natural benign tool output
+hw_ben_017,0,en,email,[FILL: Human-written benign tool output #17 (email format)],Human Author,Non-templated natural benign tool output
+hw_ben_018,0,en,json,[FILL: Human-written benign tool output #18 (json format)],Human Author,Non-templated natural benign tool output
+hw_ben_019,0,en,html,[FILL: Human-written benign tool output #19 (html format)],Human Author,Non-templated natural benign tool output
+hw_ben_020,0,en,plain_text,[FILL: Human-written benign tool output #20 (plain_text format)],Human Author,Non-templated natural benign tool output
+hw_ben_021,0,en,email,[FILL: Human-written benign tool output #21 (email format)],Human Author,Non-templated natural benign tool output
+hw_ben_022,0,en,json,[FILL: Human-written benign tool output #22 (json format)],Human Author,Non-templated natural benign tool output
+hw_ben_023,0,en,html,[FILL: Human-written benign tool output #23 (html format)],Human Author,Non-templated natural benign tool output
+hw_ben_024,0,en,plain_text,[FILL: Human-written benign tool output #24 (plain_text format)],Human Author,Non-templated natural benign tool output
+hw_ben_025,0,en,email,[FILL: Human-written benign tool output #25 (email format)],Human Author,Non-templated natural benign tool output
+hw_ben_026,0,en,json,[FILL: Human-written benign tool output #26 (json format)],Human Author,Non-templated natural benign tool output
+hw_ben_027,0,en,html,[FILL: Human-written benign tool output #27 (html format)],Human Author,Non-templated natural benign tool output
+hw_ben_028,0,en,plain_text,[FILL: Human-written benign tool output #28 (plain_text format)],Human Author,Non-templated natural benign tool output
+hw_ben_029,0,en,email,[FILL: Human-written benign tool output #29 (email format)],Human Author,Non-templated natural benign tool output
+hw_ben_030,0,en,json,[FILL: Human-written benign tool output #30 (json format)],Human Author,Non-templated natural benign tool output
+hw_ben_031,0,en,html,[FILL: Human-written benign tool output #31 (html format)],Human Author,Non-templated natural benign tool output
+hw_ben_032,0,en,plain_text,[FILL: Human-written benign tool output #32 (plain_text format)],Human Author,Non-templated natural benign tool output
+hw_ben_033,0,en,email,[FILL: Human-written benign tool output #33 (email format)],Human Author,Non-templated natural benign tool output
+hw_ben_034,0,en,json,[FILL: Human-written benign tool output #34 (json format)],Human Author,Non-templated natural benign tool output
+hw_ben_035,0,en,html,[FILL: Human-written benign tool output #35 (html format)],Human Author,Non-templated natural benign tool output
+hw_ben_036,0,en,plain_text,[FILL: Human-written benign tool output #36 (plain_text format)],Human Author,Non-templated natural benign tool output
+hw_ben_037,0,en,email,[FILL: Human-written benign tool output #37 (email format)],Human Author,Non-templated natural benign tool output
+hw_ben_038,0,en,json,[FILL: Human-written benign tool output #38 (json format)],Human Author,Non-templated natural benign tool output
+hw_ben_039,0,en,html,[FILL: Human-written benign tool output #39 (html format)],Human Author,Non-templated natural benign tool output
+hw_ben_040,0,en,plain_text,[FILL: Human-written benign tool output #40 (plain_text format)],Human Author,Non-templated natural benign tool output
+hw_ben_041,0,en,email,[FILL: Human-written benign tool output #41 (email format)],Human Author,Non-templated natural benign tool output
+hw_ben_042,0,en,json,[FILL: Human-written benign tool output #42 (json format)],Human Author,Non-templated natural benign tool output
+hw_ben_043,0,en,html,[FILL: Human-written benign tool output #43 (html format)],Human Author,Non-templated natural benign tool output
+hw_ben_044,0,en,plain_text,[FILL: Human-written benign tool output #44 (plain_text format)],Human Author,Non-templated natural benign tool output
+hw_ben_045,0,en,email,[FILL: Human-written benign tool output #45 (email format)],Human Author,Non-templated natural benign tool output
+hw_ben_046,0,en,json,[FILL: Human-written benign tool output #46 (json format)],Human Author,Non-templated natural benign tool output
+hw_ben_047,0,en,html,[FILL: Human-written benign tool output #47 (html format)],Human Author,Non-templated natural benign tool output
+hw_ben_048,0,en,plain_text,[FILL: Human-written benign tool output #48 (plain_text format)],Human Author,Non-templated natural benign tool output
+hw_ben_049,0,en,email,[FILL: Human-written benign tool output #49 (email format)],Human Author,Non-templated natural benign tool output
+hw_ben_050,0,en,json,[FILL: Human-written benign tool output #50 (json format)],Human Author,Non-templated natural benign tool output
+hw_ben_051,0,en,html,[FILL: Human-written benign tool output #51 (html format)],Human Author,Non-templated natural benign tool output
+hw_ben_052,0,en,plain_text,[FILL: Human-written benign tool output #52 (plain_text format)],Human Author,Non-templated natural benign tool output
+hw_ben_053,0,en,email,[FILL: Human-written benign tool output #53 (email format)],Human Author,Non-templated natural benign tool output
+hw_ben_054,0,en,json,[FILL: Human-written benign tool output #54 (json format)],Human Author,Non-templated natural benign tool output
+hw_ben_055,0,en,html,[FILL: Human-written benign tool output #55 (html format)],Human Author,Non-templated natural benign tool output
+hw_ben_056,0,en,plain_text,[FILL: Human-written benign tool output #56 (plain_text format)],Human Author,Non-templated natural benign tool output
+hw_ben_057,0,en,email,[FILL: Human-written benign tool output #57 (email format)],Human Author,Non-templated natural benign tool output
+hw_ben_058,0,en,json,[FILL: Human-written benign tool output #58 (json format)],Human Author,Non-templated natural benign tool output
+hw_ben_059,0,en,html,[FILL: Human-written benign tool output #59 (html format)],Human Author,Non-templated natural benign tool output
+hw_ben_060,0,en,plain_text,[FILL: Human-written benign tool output #60 (plain_text format)],Human Author,Non-templated natural benign tool output

@@ -150,24 +150,26 @@ def scan_line(
             )
 
     # 2. Entropy check on string literals (len >= 32, entropy >= 4.5)
-    # Extract string literals to avoid evaluating entire sentences/prose
-    for lit_match in re.finditer(r"""["']([A-Za-z0-9_\-+/=]{32,})["']""", line):
-        lit_str = lit_match.group(1)
-        if is_placeholder(lit_str):
-            continue
-        # Avoid double-flagging if already found by pattern
-        if any(f.fingerprint.startswith(lit_str[:4]) for f in findings):
-            continue
-        ent = shannon_entropy(lit_str)
-        if ent >= 4.5:
-            findings.append(
-                Finding(
-                    source=source,
-                    line_num=line_num,
-                    pattern_name=f"High-Entropy-Literal (entropy={ent:.2f})",
-                    fingerprint=redact_secret(lit_str),
+    # Skip entropy check on dataset files (.csv, .jsonl) where benign base64 payloads naturally appear
+    is_data_file = source.endswith(".csv") or source.endswith(".jsonl") or "data/" in source or "data\\" in source
+    if not is_data_file:
+        for lit_match in re.finditer(r"""["']([A-Za-z0-9_\-+/=]{32,})["']""", line):
+            lit_str = lit_match.group(1)
+            if is_placeholder(lit_str):
+                continue
+            # Avoid double-flagging if already found by pattern
+            if any(f.fingerprint.startswith(lit_str[:4]) for f in findings):
+                continue
+            ent = shannon_entropy(lit_str)
+            if ent >= 4.5:
+                findings.append(
+                    Finding(
+                        source=source,
+                        line_num=line_num,
+                        pattern_name=f"High-Entropy-Literal (entropy={ent:.2f})",
+                        fingerprint=redact_secret(lit_str),
+                    )
                 )
-            )
 
     return findings
 

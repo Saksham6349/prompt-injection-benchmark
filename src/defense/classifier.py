@@ -74,6 +74,23 @@ class HeuristicDetector:
 
 # ── Transformer-Based Classifier ──────────────────────────────────────
 
+FROZEN_TAU_STAR = 0.4700
+EXPECTED_CHECKPOINT_SHA256 = "784c14f18bb459046fa286a2b3897d1c8604347ce16f28f40e33d71142cff6df"
+
+
+def compute_safetensors_sha256(path: str) -> str:
+    """Compute SHA-256 digest of model.safetensors if it exists."""
+    import hashlib
+    safetensor_f = os.path.join(path, "model.safetensors") if os.path.isdir(path) else path
+    if not os.path.exists(safetensor_f):
+        return ""
+    hasher = hashlib.sha256()
+    with open(safetensor_f, "rb") as f:
+        while chunk := f.read(65536):
+            hasher.update(chunk)
+    return hasher.hexdigest()
+
+
 class InjectionClassifier:
     """Transformer classifier for prompt-injection detection.
 
@@ -85,7 +102,8 @@ class InjectionClassifier:
         self,
         model_name: str = "distilbert-base-uncased",
         model_path: str | None = None,
-        threshold: float = 0.15,
+        threshold: float = FROZEN_TAU_STAR,
+        verify_checkpoint: bool = True,
     ) -> None:
         if model_path is None:
             default_local = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "models", "injection_classifier"))
@@ -95,6 +113,7 @@ class InjectionClassifier:
         self.model_name = model_name
         self.model_path = model_path
         self.threshold = threshold
+        self.verify_checkpoint = verify_checkpoint
         self._model = None
         self._tokenizer = None
         self._fallback = HeuristicDetector()
@@ -112,11 +131,22 @@ class InjectionClassifier:
             import torch  # type: ignore
 
             path = self.model_path or self.model_name
+            if self.verify_checkpoint and os.path.exists(os.path.join(path, "model.safetensors")):
+                actual_sha = compute_safetensors_sha256(path)
+                if actual_sha != EXPECTED_CHECKPOINT_SHA256:
+                    log.warning(
+                        "SECURITY GATE: Checkpoint at %s has SHA-256 %s, which does not match "
+                        "expected publication checkpoint %s. Refusing to load legacy/unverified weights.",
+                        path, actual_sha, EXPECTED_CHECKPOINT_SHA256
+                    )
+                    self._using_fallback = True
+                    return
+
             self._tokenizer = AutoTokenizer.from_pretrained(path)
             self._model = AutoModelForSequenceClassification.from_pretrained(path)
             self._model.eval()
             self._using_fallback = False
-            log.info("Loaded classifier model from %s", path)
+            log.info("Loaded classifier model from %s (SHA-256 verified)", path)
         except Exception as exc:  # noqa: BLE001
             log.warning(
                 "Could not load transformer model (%s); using heuristic fallback.",

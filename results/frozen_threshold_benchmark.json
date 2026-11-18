@@ -1,0 +1,9 @@
+{
+  "benchmark_threshold_protocol": "Calibrated exclusively on benchmark cluster-isolated dev split (250 cases)",
+  "seed": 42,
+  "dev_clusters_count": 20,
+  "test_clusters_count": 20,
+  "tau_star_benchmark_f1_max": 0.9772,
+  "tau_benchmark_target_1pct_fpr": 0.9948,
+  "calibrated_timestamp_utc": "2026-11-17T14:15:00Z"
+}

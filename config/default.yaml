@@ -54,7 +54,9 @@ defense:
     enabled: true
     model_name: "distilbert-base-uncased"
     model_path: "models/injection_classifier"
-    threshold: 0.15
+    threshold: 0.4700                 # Calibrated optimal F1-max threshold (results/frozen_threshold.json)
+    benchmark_threshold: 0.9772       # Domain-calibrated threshold for long tool outputs (results/frozen_threshold_benchmark.json)
+    checkpoint_sha256: "784c14f18bb459046fa286a2b3897d1c8604347ce16f28f40e33d71142cff6df"
     max_length: 512
     batch_size: 16
 

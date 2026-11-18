@@ -1,0 +1,124 @@
+{
+  "timestamp_utc": "2026-11-16T15:55:42.106838+00:00",
+  "random_seed": 42,
+  "total_rows": 11683,
+  "total_clusters": 11547,
+  "split_distribution": {
+    "train": {
+      "rows": 8179,
+      "clusters": 8080,
+      "benign_0": 4666,
+      "attack_1": 3513,
+      "attack_ratio": 0.4295
+    },
+    "calibration": {
+      "rows": 1752,
+      "clusters": 1737,
+      "benign_0": 1000,
+      "attack_1": 752,
+      "attack_ratio": 0.4292
+    },
+    "test": {
+      "rows": 1752,
+      "clusters": 1730,
+      "benign_0": 999,
+      "attack_1": 753,
+      "attack_ratio": 0.4298
+    }
+  },
+  "length_distributions": {
+    "deepset": {
+      "label_0": {
+        "count": 397,
+        "char_mean": 66.8,
+        "char_median": 42,
+        "char_std": 57.1,
+        "word_mean": 10.7,
+        "word_median": 7,
+        "word_std": 9.5
+      },
+      "label_1": {
+        "count": 263,
+        "char_mean": 198.4,
+        "char_median": 126,
+        "char_std": 332.9,
+        "word_mean": 33.0,
+        "word_median": 21,
+        "word_std": 56.4
+      }
+    },
+    "slabs": {
+      "label_0": {
+        "count": 6268,
+        "char_mean": 55.0,
+        "char_median": 47,
+        "char_std": 38.2,
+        "word_mean": 9.1,
+        "word_median": 8,
+        "word_std": 5.6
+      },
+      "label_1": {
+        "count": 4755,
+        "char_mean": 74.7,
+        "char_median": 63,
+        "char_std": 48.0,
+        "word_mean": 11.7,
+        "word_median": 10,
+        "word_std": 7.7
+      }
+    }
+  },
+  "trivial_baseline_results": {
+    "Baseline_A_Length_Only": {
+      "auroc": 0.7163,
+      "auroc_ci95": [
+        0.6906,
+        0.7408
+      ],
+      "accuracy": 0.6484,
+      "accuracy_ci95": [
+        0.6257,
+        0.6704
+      ],
+      "f1": 0.4264,
+      "f1_ci95": [
+        0.3885,
+        0.4633
+      ]
+    },
+    "Baseline_B_TFIDF_LogisticRegression": {
+      "auroc": 0.9913,
+      "auroc_ci95": [
+        0.9876,
+        0.9944
+      ],
+      "accuracy": 0.9618,
+      "accuracy_ci95": [
+        0.9517,
+        0.9698
+      ],
+      "f1": 0.9546,
+      "f1_ci95": [
+        0.944,
+        0.9642
+      ]
+    },
+    "Baseline_C_Language_Surface_Features": {
+      "auroc": 0.5018,
+      "auroc_ci95": [
+        0.4729,
+        0.5281
+      ],
+      "accuracy": 0.6022,
+      "accuracy_ci95": [
+        0.5791,
+        0.6248
+      ],
+      "f1": 0.1867,
+      "f1_ci95": [
+        0.1495,
+        0.223
+      ]
+    }
+  }
+}
